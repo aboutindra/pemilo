@@ -1,0 +1,7 @@
+{
+  "name": "Pemilo.id",
+  "version": "1.0.0",
+  "description": "Platform Pemilihan Umum",
+  "main": "index.js",
+  "license": "MIT"
+}
