@@ -3,5 +3,11 @@
   "version": "1.0.0",
   "description": "Platform Pemilihan Umum",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "bp": "^0.1.1-beta",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongodb": "^3.3.5"
+  }
 }
