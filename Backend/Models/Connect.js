@@ -16,7 +16,7 @@ class MongoDB{
             else{
                 return "Database [status:'running']"
             }
-        });*/
+           });*/
 
         Mongo.connect(this.url, {useNewUrlParser:true, useUnifiedTopology:true} , function(err, db) {
             if(err){

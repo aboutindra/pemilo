@@ -54,7 +54,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575896504223</updated>
-      <workItem from="1575896505697" duration="1165000" />
+      <workItem from="1575896505697" duration="2310000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed MongoClient Connection Error, but get 'undefined' and 3 Warnings">
       <created>1575897202639</created>
