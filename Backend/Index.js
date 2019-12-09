@@ -20,6 +20,7 @@ app.listen(4000, (err)=>{
         console.log("Server [status:running]");
     }
 
-    console.log(mongo.checkConnection());
+    /*console.log(mongo.checkConnection());*/
+    mongo.checkConnection();
 
 })
