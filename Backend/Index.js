@@ -4,7 +4,7 @@ const app = express();
 const bp = require('body-parser');
 const cors = require('cors');
 
-const Mongo = require('./Mongo');
+const Mongo = require('./Models/Connect');
 
 const mongo = new Mongo();
 
