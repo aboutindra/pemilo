@@ -1,5 +1,4 @@
-const Mongo = require('mongodb').MongoClient;
-const ID = require('mongodb').ObjectID;
+const Mongo = require('mongoose');
 
 class MongoDB{
 
