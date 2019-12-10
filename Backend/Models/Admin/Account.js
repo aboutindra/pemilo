@@ -13,14 +13,16 @@ class Account{
 
     }
 
-    executeLogin(col, param){
-            
-        let dat = [];
-        let sta = false;        
+    async executeLogin(col, param){
 
-        dat = col.find(param).toArray();        
+        let dat;
+        let sta = false;           
 
-        return sta = ((dat) ? true : false);
+        dat =  await col.find(param).toArray();        
+
+        sta = (( dat != "") ? true : false)        
+
+        return sta;
 
     }
 

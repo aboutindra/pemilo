@@ -8,14 +8,14 @@ const adm = new Admin();
 
 app.use(bp.json());
 
-app.post("/login",(req,res) => {
+app.post("/login", async (req,res) => {
 
     let usr = req.body.username;
     let pas = req.body.password;
 
     let sta = false;
 
-    sta = adm.funcLogin(usr, pas);
+    sta = await adm.funcLogin(usr, pas);
 
     res.send({result: sta});
 

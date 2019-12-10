@@ -25,11 +25,11 @@ class MongoDB{
         });
     }
 
-    pullAllAdmins(){
+    pullAllAdmins(){        
         return {res: acc.getDataAll(this.adm)};
     }
 
-    checkForLogin(param){
+    checkForLogin(param){    
         return acc.executeLogin(this.adm, param);
     }    
 

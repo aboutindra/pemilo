@@ -9,7 +9,7 @@
   
   "license": "MIT",
 
-  "script": {
+  "scripts": {
     "start": "node Index"
   },
   
