@@ -7,7 +7,7 @@ const cors = require('cors');
 const Mongo = require('./Models/Connect');
 const mongo = new Mongo("mongodb://localhost:27017/pemilo");
 
-const adminRoute = require('./Routes/Admin');
+const adminRoute = require('./Routes/Admin/Index');
 
 app.use(express.static(__dirname));
 app.use(bp.json());
