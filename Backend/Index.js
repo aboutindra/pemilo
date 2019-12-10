@@ -4,25 +4,24 @@ const app = express();
 const bp = require('body-parser');
 const cors = require('cors');
 
-const Mongo = require('./Models/Connect');
-const mongo = new Mongo("mongodb://localhost:27017/pemilo");
+const Mongo = require('./Models/Index');
+const mongo = new Mongo("mongodb://127.0.0.1:27017/pemilo");
 
-const adminRoute = require('./Routes/Admin/Index');
+const Admin = require('./Routes/Admin/Index');
+
 
 app.use(express.static(__dirname));
 app.use(bp.json());
 app.use(cors());
-app.use('/api/v1/admin',adminRoute);
 
-app.listen(4000, (err)=>{
+app.use('/api/v1/admin', Admin);
 
+app.listen(4000, async (err)=>{
+    
     if(err){console.log("Error")}
+    else{console.log("Server http://localhost:4000/ [status:running]");}
+    await mongo.createCollectionRequire();
+    await mongo.checkConnection();    
 
-    else{
-        console.log("Server http://localhost:4000/ [status:running]");
-    }
+});
 
-    /*console.log(mongo.checkConnection());*/
-    mongo.checkConnection();
-
-})

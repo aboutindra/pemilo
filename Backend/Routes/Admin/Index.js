@@ -1,20 +1,26 @@
 const express = require('express');
-const router = express.Router();
-const encrypt = require('bcrypt');
-let Admin = require('./Admin');
+const app = express.Router();
 
-router.post("/login", function (req,res,next) {
-    let username = req.body.username;
-    let password = req.body.password;
-    let adminClass = new Admin();
-    let adminFuncLogin = adminClass.funcLogin(username, password);
-    if(adminFuncLogin){
-        console.log("true", adminFuncLogin);
-        res.send({result:true})
-    }else{
-        console.log("false", adminFuncLogin);
-        res.send({result:false})
-    }
+const bp = require("body-parser");
+
+const Admin = require('./Admin');
+const adm = new Admin();
+
+app.use(bp.json());
+
+app.post("/login",(req,res) => {
+
+    let usr = req.body.username;
+    let pas = req.body.password;
+
+    let sta = false;
+
+    sta = adm.funcLogin(usr, pas);
+
+    res.send({result: sta});
+
+});
+
     /*async function compareHashReq(encryptedReq) {
         encrypt.compare(plainText,encryptedReq, function (err,result) {
             if(err || result === false){
@@ -88,27 +94,26 @@ router.post("/login", function (req,res,next) {
             }
         })
     }*/
-});
 
-router.post("/admin_add_event", function (req,res,next) {
-    var encryptedReq = req.body.req;
-    async function compareHashReq(encryptedReq) {
-        encrypt.compare(plainText,encryptedReq, function (err,result) {
-            if(err || result === false){
-                res.send(
-                    {
-                        result : result
-                    }
-                );
-            }else{
-                adminModels.find(function (err, resultAdmin) {
-                    if(err) return next(err);
-                    res.json(resultAdmin);
-                })
-            }
-        })
-    }
-    compareHashReq(encryptedReq);
-});
+// app.post("/admin_add_event", function (req,res,next) {
+//     var encryptedReq = req.body.req;
+//     async function compareHashReq(encryptedReq) {
+//         encrypt.compare(plainText,encryptedReq, function (err,result) {
+//             if(err || result === false){
+//                 res.send(
+//                     {
+//                         result : result
+//                     }
+//                 );
+//             }else{
+//                 adminModels.find(function (err, resultAdmin) {
+//                     if(err) return next(err);
+//                     res.json(resultAdmin);
+//                 })
+//             }
+//         })
+//     }
+//     compareHashReq(encryptedReq);
+// });
 
-module.exports = router;
+module.exports = app;

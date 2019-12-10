@@ -1,24 +1,13 @@
-const mongoose = require('mongoose');
-const adminModels = require('./../../Models/Database').Admin;
+const Model = require('../../Models/Index');
+const mdl = new Model("mongodb://127.0.0.1:27017/pemilo");
 
-class Admin {
-    constructor(){
-        this.username = "";
-        this.password = "";
+class Admin {    
+
+    funcLogin(usr,pas){
+        let param = {user: usr, pass: pas};
+        return mdl.checkForLogin(param);
     }
-    funcLogin(username, password){
-        this.username = username;
-        this.password = password;
-        adminModels.findOne({username : this.username, password : this.password}, function (err, result) {
-            if(err){
-                console.log(err, "false");
-                return 'salah';
-            }else {
-                console.log(result, "true");
-                return 'benar';
-            }
-        })
-    }
+
 }
 
 module.exports = Admin;
