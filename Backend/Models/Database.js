@@ -34,12 +34,12 @@ var LeaderSchema = new mongoose.Schema({
     leader_mission : String,
     leader_partai : String, //Bisa diisi dgn kelas(?)
     total_suara : Number
-})
+});
 
-var User = mongoose.model('Users', UserSchema , 'pemilo')
-var Admin = mongoose.model('Admins', AdminSchema , 'pemilo')
-var Event = mongoose.model('Events', EventSchema , 'pemilo')
-var Leader = mongoose.model('Leaders', LeaderSchema , 'pemilo')
+var User = mongoose.model('Users', UserSchema , 'users');
+var Admin = mongoose.model('Admins', AdminSchema , 'admins');
+var Event = mongoose.model('Events', EventSchema , 'events');
+var Leader = mongoose.model('Leaders', LeaderSchema , 'leaders');
 
 module.exports = {
   User : User,
