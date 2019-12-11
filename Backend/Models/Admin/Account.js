@@ -3,11 +3,11 @@
 
 class Account{
     
-    getDataAll(col){
+    getDataAll(col) {
 
-        let dat = [];        
+        let dat;        
 
-        dat = col.find({}).toArray();
+        dat = col.find().toArray();
             
         return dat;
 

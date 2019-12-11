@@ -21,6 +21,10 @@ app.post("/login", async (req,res) => {
 
 });
 
+app.get('/all', async (req,res)=>{    
+    res.send({result: await adm.funcGetAll()});
+});
+
     /*async function compareHashReq(encryptedReq) {
         encrypt.compare(plainText,encryptedReq, function (err,result) {
             if(err || result === false){
