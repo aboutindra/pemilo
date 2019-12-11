@@ -1,15 +1,24 @@
 {
   "name": "pemilo.id",
+  
   "version": "1.0.0",
+  
   "description": "Platform Pemilihan Umum",
+  
   "main": "Index.js",
+  
   "license": "MIT",
+
+  "scripts": {
+    "start": "node Index"
+  },
+  
   "dependencies": {
     "bcrypt": "^3.0.7",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "mongodb": "^3.3.5",
-    "mongoose": "^5.7.14"
+    "mongodb": "^3.4.0"
   }
+  
 }
