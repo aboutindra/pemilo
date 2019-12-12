@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cb992e0b-1e82-42b8-a165-066095186733" name="Default Changelist" comment="Add routes Admin with just get `admins` collection data. When you want to fetch data, you just be able make a POST to endpoint with">
-      <change afterPath="$PROJECT_DIR$/Routes/Client/Index.js" afterDir="false" />
+    <list default="true" id="cb992e0b-1e82-42b8-a165-066095186733" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Routes/Admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/Admin/Admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Routes/Index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/Admin/Index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Routes/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/Client/Client.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Admin/Account.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Schema.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Routes/Admin/Admin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Routes/Admin/Index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Routes/Client/Client.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Routes/Client/Index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,6 +26,13 @@
       <executable />
     </execution>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -28,6 +41,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -72,7 +86,13 @@
       <workItem from="1575940631294" duration="2818000" />
       <workItem from="1575944648247" duration="2831000" />
       <workItem from="1575947962610" duration="2983000" />
-      <workItem from="1575979001539" duration="7757000" />
+      <workItem from="1575979001539" duration="9219000" />
+      <workItem from="1576029831158" duration="215000" />
+      <workItem from="1576030070501" duration="2018000" />
+      <workItem from="1576067483588" duration="3645000" />
+      <workItem from="1576150752995" duration="3389000" />
+      <workItem from="1576156559506" duration="588000" />
+      <workItem from="1576164927907" duration="683000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed MongoClient Connection Error, but get 'undefined' and 3 Warnings">
       <created>1575897202639</created>
@@ -88,7 +108,21 @@
       <option name="project" value="LOCAL" />
       <updated>1575949658895</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Updated with Error ;)">
+      <created>1575987872734</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1575987872734</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Updated with Error ;)&#10;Ketinggalan om">
+      <created>1575987934322</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1575987934322</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,6 +145,8 @@
     <MESSAGE value="Fixed MongoClient Connection Error, but get 'undefined' and 3 Warnings" />
     <MESSAGE value="Fixed MongoClient Connection Error, but get 'undefined'" />
     <MESSAGE value="Add routes Admin with find `admins` collection data API Endpoint. When you want to fetch data, you just be able make a POST to endpoint with dynamic encrypted parameter ( with bcrypt and the plainText is = '123' ) and get response which is you can fetching it.&#10;&#10;The endpoint = &quot;http://localhost:4000/api/v1/admin&quot;, example Request &#10;{&#10;   &quot;req&quot; : &quot;$2b$04$y58NUludsBlBrgbNgQ7AXeDqc7W7F.1XOeetePXWy13Qhp9F25cOS&quot; &#10; }" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add routes Admin with find `admins` collection data API Endpoint. When you want to fetch data, you just be able make a POST to endpoint with dynamic encrypted parameter ( with bcrypt and the plainText is = '123' ) and get response which is you can fetching it.&#10;&#10;The endpoint = &quot;http://localhost:4000/api/v1/admin&quot;, example Request &#10;{&#10;   &quot;req&quot; : &quot;$2b$04$y58NUludsBlBrgbNgQ7AXeDqc7W7F.1XOeetePXWy13Qhp9F25cOS&quot; &#10; }" />
+    <MESSAGE value="Updated with Error ;)" />
+    <MESSAGE value="Updated with Error ;)&#10;Ketinggalan om" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated with Error ;)&#10;Ketinggalan om" />
   </component>
 </project>

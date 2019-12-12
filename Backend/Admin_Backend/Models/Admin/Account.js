@@ -20,7 +20,7 @@ class Account{
 
         dat =  await col.find(param).toArray();        
 
-        sta = (( dat != "") ? true : false)        
+        sta = (( dat !== "") ? true : false);
 
         return sta;
 
@@ -28,4 +28,4 @@ class Account{
 
 }
 
-module.exports = Account
+module.exports = Account;
