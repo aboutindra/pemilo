@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cb992e0b-1e82-42b8-a165-066095186733" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1UkNCRKG1aHuWVzFdUUWpFChFhV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Routes/Client" />
+      <recent name="$PROJECT_DIR$/Routes/Admin" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand />
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cb992e0b-1e82-42b8-a165-066095186733" name="Default Changelist" comment="" />
+      <created>1575896504223</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1575896504223</updated>
+      <workItem from="1575896505697" duration="7782000" />
+      <workItem from="1575939838723" duration="512000" />
+      <workItem from="1575940631294" duration="2818000" />
+      <workItem from="1575944648247" duration="2831000" />
+      <workItem from="1575947962610" duration="2983000" />
+      <workItem from="1575979001539" duration="9219000" />
+      <workItem from="1576029831158" duration="215000" />
+      <workItem from="1576030070501" duration="2018000" />
+      <workItem from="1576067483588" duration="3645000" />
+      <workItem from="1576150752995" duration="3389000" />
+      <workItem from="1576156559506" duration="588000" />
+      <workItem from="1576164927907" duration="1631000" />
+    </task>
+    <task id="LOCAL-00001" summary="Fixed MongoClient Connection Error, but get 'undefined' and 3 Warnings">
+      <created>1575897202639</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1575897202639</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add routes Admin with find `admins` collection data API Endpoint. When you want to fetch data, you just be able make a POST to endpoint with dynamic encrypted parameter ( with bcrypt and the plainText is = '123' ) and get response which is you can fetching it.&#10;&#10;The endpoint = &quot;http://localhost:4000/api/v1/admin&quot;, example Request &#10;{&#10;   &quot;req&quot; : &quot;$2b$04$y58NUludsBlBrgbNgQ7AXeDqc7W7F.1XOeetePXWy13Qhp9F25cOS&quot; &#10; }">
+      <created>1575949658895</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1575949658895</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Updated with Error ;)">
+      <created>1575987872734</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1575987872734</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Updated with Error ;)&#10;Ketinggalan om">
+      <created>1575987934322</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1575987934322</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Separate Backend service into 2 Microservices ( Admin &amp; Client ) Services">
+      <created>1576168227537</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1576168227537</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fixed MongoClient Connection Error, but get 'undefined' and 3 Warnings" />
+    <MESSAGE value="Fixed MongoClient Connection Error, but get 'undefined'" />
+    <MESSAGE value="Add routes Admin with find `admins` collection data API Endpoint. When you want to fetch data, you just be able make a POST to endpoint with dynamic encrypted parameter ( with bcrypt and the plainText is = '123' ) and get response which is you can fetching it.&#10;&#10;The endpoint = &quot;http://localhost:4000/api/v1/admin&quot;, example Request &#10;{&#10;   &quot;req&quot; : &quot;$2b$04$y58NUludsBlBrgbNgQ7AXeDqc7W7F.1XOeetePXWy13Qhp9F25cOS&quot; &#10; }" />
+    <MESSAGE value="Updated with Error ;)" />
+    <MESSAGE value="Updated with Error ;)&#10;Ketinggalan om" />
+    <MESSAGE value="Separate Backend service into 2 Microservices ( Admin &amp; Client ) Services" />
+    <option name="LAST_COMMIT_MESSAGE" value="Separate Backend service into 2 Microservices ( Admin &amp; Client ) Services" />
+  </component>
+</project>
