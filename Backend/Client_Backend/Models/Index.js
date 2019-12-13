@@ -3,9 +3,6 @@ const Mongo = require('mongodb').MongoClient;
 const Schema = require('./Schema');
 const sch = new Schema();
 
-const Account_Admin = require('./Admin/Account');
-const acc_admin = new Account_Admin();
-
 const Account_Client = require('./Client/Account');
 const usr_client = new Account_Client();
 
@@ -23,8 +20,7 @@ class MongoDB{
 
     startSetup(){
         Mongo.connect(this.url, {useNewUrlParser:true, useUnifiedTopology:true}, (err, con) => {
-            this.db  = con.db('pemilo');            
-            this.adm = this.db.collection('Admins');
+            this.db  = con.db('pemilo');
             this.usr = this.db.collection('Users');
         });
     }
@@ -32,14 +28,6 @@ class MongoDB{
     pullAllUsers(){
         return usr_client.getDataAll(this.usr);
     }
-
-    pullAllAdmins(){                
-        return acc_admin.getDataAll(this.adm);
-    }
-
-    checkForLogin(param){
-        return acc_admin.executeLogin(this.adm, param);
-    }    
 
     checkForCode(code){
         return usr_client.checkCode(this.usr, code);

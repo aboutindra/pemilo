@@ -3,17 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="cb992e0b-1e82-42b8-a165-066095186733" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Admin/Account.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Schema.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Routes/Admin/Admin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Routes/Admin/Index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Routes/Client/Client.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Routes/Client/Index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin_Backend/Index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Admin_Backend/Index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin_Backend/Models/Client/Account.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin_Backend/Models/Index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Admin_Backend/Models/Index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin_Backend/Models/Schema.js" beforeDir="false" afterPath="$PROJECT_DIR$/Admin_Backend/Models/Schema.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin_Backend/Routes/Client/Client.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin_Backend/Routes/Client/Index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client_Backend/Index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Client_Backend/Index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client_Backend/Models/Admin/Account.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client_Backend/Models/Index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Client_Backend/Models/Index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client_Backend/Models/Schema.js" beforeDir="false" afterPath="$PROJECT_DIR$/Client_Backend/Models/Schema.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -92,7 +91,8 @@
       <workItem from="1576067483588" duration="3645000" />
       <workItem from="1576150752995" duration="3389000" />
       <workItem from="1576156559506" duration="588000" />
-      <workItem from="1576164927907" duration="683000" />
+      <workItem from="1576164927907" duration="2702000" />
+      <workItem from="1576249990387" duration="199000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed MongoClient Connection Error, but get 'undefined' and 3 Warnings">
       <created>1575897202639</created>
@@ -122,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575987934322</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Separate Backend service into 2 Microservices ( Admin &amp; Client ) Services">
+      <created>1576168227537</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1576168227537</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,6 +154,7 @@
     <MESSAGE value="Add routes Admin with find `admins` collection data API Endpoint. When you want to fetch data, you just be able make a POST to endpoint with dynamic encrypted parameter ( with bcrypt and the plainText is = '123' ) and get response which is you can fetching it.&#10;&#10;The endpoint = &quot;http://localhost:4000/api/v1/admin&quot;, example Request &#10;{&#10;   &quot;req&quot; : &quot;$2b$04$y58NUludsBlBrgbNgQ7AXeDqc7W7F.1XOeetePXWy13Qhp9F25cOS&quot; &#10; }" />
     <MESSAGE value="Updated with Error ;)" />
     <MESSAGE value="Updated with Error ;)&#10;Ketinggalan om" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated with Error ;)&#10;Ketinggalan om" />
+    <MESSAGE value="Separate Backend service into 2 Microservices ( Admin &amp; Client ) Services" />
+    <option name="LAST_COMMIT_MESSAGE" value="Separate Backend service into 2 Microservices ( Admin &amp; Client ) Services" />
   </component>
 </project>

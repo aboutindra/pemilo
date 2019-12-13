@@ -7,17 +7,15 @@ const cors = require('cors');
 const Mongo = require('./Models/Index');
 const mongo = new Mongo("mongodb://127.0.0.1:27017/pemilo");
 
-const Admin = require('./Routes/Admin/Index');
 const User = require('./Routes/Client/Index');
 
 app.use(express.static(__dirname));
 app.use(bp.json());
 app.use(cors());
 
-app.use('/api/v1/admin', Admin);
 app.use('api/v1/user', User);
 
-app.listen(4000, async (err)=>{
+app.listen(5000, async (err)=>{
     
     if(err){console.log("Error")}
     else{console.log("Server http://localhost:4000/ [status:running]");}

@@ -11,10 +11,6 @@ class Schema{
             if(err) console.log(err);
             console.log("Collection Admins created.");            
         });
-        db.createCollection("Users", (err) => {
-            if(err) console.log(err);
-            console.log("Collection Users created.");
-        });
     }
 
 }
