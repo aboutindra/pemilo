@@ -4,7 +4,9 @@ import {Switch,Route} from 'react-router-dom';
 import Index from './Component/Index';
 
 export default function Root(){
-    <Switch>
-        <Route path="/" component={Index}></Route>
-    </Switch>
+    return(
+        <Switch>
+            <Route path="/" component={Index}></Route>
+        </Switch>
+    );
 }
