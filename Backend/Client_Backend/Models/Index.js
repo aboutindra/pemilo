@@ -3,36 +3,35 @@ const Mongo = require('mongodb').MongoClient;
 const Schema = require('./Schema');
 const sch = new Schema();
 
-const Account = require('./Admin/Account');
-const acc = new Account();
+const Account_Client = require('./Client/Account');
+const usr_client = new Account_Client();
 
 class MongoDB{
 
     constructor(url){
         
         this.url = url;
-        this.db  = ''
+        this.db  = '';
         this.adm = '';
-
+        this.usr = '';
         this.startSetup();
 
     }
 
     startSetup(){
         Mongo.connect(this.url, {useNewUrlParser:true, useUnifiedTopology:true}, (err, con) => {
-            this.db  = con.db('pemilo');            
-            this.adm = this.db.collection('Admins'); 
+            this.db  = con.db('pemilo');
+            this.usr = this.db.collection('Users');
         });
     }
 
-    pullAllAdmins(){                
-        return acc.getDataAll(this.adm);
+    pullAllUsers(){
+        return usr_client.getDataAll(this.usr);
     }
 
-    checkForLogin(param){    
-        return acc.executeLogin(this.adm, param);
-    }    
-
+    checkForCode(code){
+        return usr_client.checkCode(this.usr, code);
+    }
 
     createCollectionRequire(){
         Mongo.connect(this.url, {useNewUrlParser:true, useUnifiedTopology:true}, (err, con)=>{
@@ -49,7 +48,6 @@ class MongoDB{
             }
         });
     }
-
 }
 
 module.exports = MongoDB;

@@ -9,12 +9,11 @@ const mongo = new Mongo("mongodb://127.0.0.1:27017/pemilo");
 
 const Admin = require('./Routes/Admin/Index');
 
-
 app.use(express.static(__dirname));
 app.use(bp.json());
 app.use(cors());
 
-app.use('/api/v1/admin', Admin);
+app.use('/', Admin);
 
 app.listen(4000, async (err)=>{
     

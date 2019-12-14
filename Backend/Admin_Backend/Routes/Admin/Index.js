@@ -99,25 +99,25 @@ app.get('/all', async (req,res)=>{
         })
     }*/
 
-// app.post("/admin_add_event", function (req,res,next) {
-//     var encryptedReq = req.body.req;
-//     async function compareHashReq(encryptedReq) {
-//         encrypt.compare(plainText,encryptedReq, function (err,result) {
-//             if(err || result === false){
-//                 res.send(
-//                     {
-//                         result : result
-//                     }
-//                 );
-//             }else{
-//                 adminModels.find(function (err, resultAdmin) {
-//                     if(err) return next(err);
-//                     res.json(resultAdmin);
-//                 })
-//             }
-//         })
-//     }
-//     compareHashReq(encryptedReq);
-// });
-
+/*router.post("/admin_add_event", function (req,res,next) {
+    var encryptedReq = req.body.req;
+    async function compareHashReq(encryptedReq) {
+        encrypt.compare(plainText,encryptedReq, function (err,result) {
+            if(err || result === false){
+                res.send(
+                    {
+                        result : result
+                    }
+                );
+            }else{
+                adminModels.find(function (err, resultAdmin) {
+                    if(err) return next(err);
+                    res.json(resultAdmin);
+                })
+            }
+        })
+    }
+    compareHashReq(encryptedReq);
+});
+*/
 module.exports = app;
