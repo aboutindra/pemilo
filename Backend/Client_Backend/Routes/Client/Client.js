@@ -12,6 +12,12 @@ class Client {
         return mdl.checkForCode(param);
     }
 
+    funcSelectLeader(code, leader_selected, event_id){
+
+        let param = {code : code, leader_selected : leader_selected, event_id : event_id};
+        return mdl.addVoteLeader(param);
+
+    }
 }
 
 module.exports = Client;
