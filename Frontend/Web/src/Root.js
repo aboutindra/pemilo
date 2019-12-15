@@ -1,12 +1,16 @@
 import React from 'react';
 import {Switch,Route} from 'react-router-dom';
 
-import Index from './Component/Index';
+import { Routes } from './Config';
 
 export default function Root(){
     return(
         <Switch>
-            <Route path="/" component={Index}></Route>
+            {
+                Routes.map((route, id)=>(
+                    <Route key={id} exact path = {route.path}   component= {route.component} />                    
+                ))
+            }            
         </Switch>
     );
 }

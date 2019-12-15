@@ -1,12 +1,13 @@
 import React from 'react';
-import './App.css';
+import './Resource/App.css';
 
 import Root from './Root';
+
 
 function App() {
   return (
     <div className="App">
-        <Root />
+        <Root/>
     </div>
   );
 }
