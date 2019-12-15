@@ -33,6 +33,9 @@ class MongoDB{
         return usr_client.checkCode(this.usr, code);
     }
 
+    addVoteLeader(param){
+        return usr_client.insertVoteData(this.usr, param)
+    }
     createCollectionRequire(){
         Mongo.connect(this.url, {useNewUrlParser:true, useUnifiedTopology:true}, (err, con)=>{
             sch.createCollectionAll(err, con)

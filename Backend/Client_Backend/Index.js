@@ -13,12 +13,12 @@ app.use(express.static(__dirname));
 app.use(bp.json());
 app.use(cors());
 
-app.use('api/v1/user', User);
+app.use('/', User);
 
 app.listen(5000, async (err)=>{
     
     if(err){console.log("Error")}
-    else{console.log("Server http://localhost:4000/ [status:running]");}
+    else{console.log("Server http://localhost:5000/ [status:running]");}
     await mongo.createCollectionRequire();
     await mongo.checkConnection();    
 
