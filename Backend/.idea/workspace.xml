@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cb992e0b-1e82-42b8-a165-066095186733" name="Default Changelist" comment="All done for Signup and Verify Email Feature,&#10;&#10;How to using it :&#10;&#10;1. POST data to http://localhost:4000/signup, the params =&#10;&#10;{&#10;&#9;&quot;email&quot; : &quot;indrawanjonmuhamad@yahoo.com&quot;,&#10;&#9;&quot;password&quot; : &quot;123akadsj23&quot;&#10;}&#10;&#10;2. Open your email and click the link&#10;&#10;3. The return of the endpoint if success will be return  { result : true } and neither { result : false } (The GET endpoint &#10; [ http://localhost:3000/verification/5df91c8a285afa1b196fb6e1 ] )&#10; &#10;4. if return True the statusAccount on your account in Admins collection will be change to true, it will be like this :&#10;{&#10;&quot;_id&quot;:&quot;5df917ff26`09d2125d3d7172&quot;,&#10;&quot;email&quot;:&quot;indrawanjonmuhamad@yahoo.com&quot;,&#10;&quot;password&quot;:&quot;123akadsj23&quot;,&#10;&quot;statusAccount&quot;:true&#10;}">
+      <change afterPath="$PROJECT_DIR$/Email_Backend/Models/VerifyCode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email_Backend/Routes/verify_code.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin_Backend/Models/Admin/Account.js" beforeDir="false" afterPath="$PROJECT_DIR$/Admin_Backend/Models/Admin/Account.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin_Backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Admin_Backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin_Backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Admin_Backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Email_Backend/Index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Email_Backend/Index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Email_Backend/Models/Index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Email_Backend/Models/Index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Email_Backend/Models/Schema.js" beforeDir="false" afterPath="$PROJECT_DIR$/Email_Backend/Models/Schema.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Email_Backend/Models/SentCode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Email_Backend/Models/SentCode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Email_Backend/Routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Email_Backend/Routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Email_Backend/Routes/sent_code.js" beforeDir="false" afterPath="$PROJECT_DIR$/Email_Backend/Routes/sent_code.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Email_Backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Email_Backend/package.json" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1UkNCRKG1aHuWVzFdUUWpFChFhV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Routes/Client" />
+      <recent name="$PROJECT_DIR$/Routes/Admin" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand />
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cb992e0b-1e82-42b8-a165-066095186733" name="Default Changelist" comment="" />
+      <created>1575896504223</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1575896504223</updated>
+      <workItem from="1575896505697" duration="7782000" />
+      <workItem from="1575939838723" duration="512000" />
+      <workItem from="1575940631294" duration="2818000" />
+      <workItem from="1575944648247" duration="2831000" />
+      <workItem from="1575947962610" duration="2983000" />
+      <workItem from="1575979001539" duration="9219000" />
+      <workItem from="1576029831158" duration="215000" />
+      <workItem from="1576030070501" duration="2018000" />
+      <workItem from="1576067483588" duration="3645000" />
+      <workItem from="1576150752995" duration="3389000" />
+      <workItem from="1576156559506" duration="588000" />
+      <workItem from="1576164927907" duration="2702000" />
+      <workItem from="1576249990387" duration="492000" />
+      <workItem from="1576251053298" duration="2621000" />
+      <workItem from="1576296932886" duration="1778000" />
+      <workItem from="1576313385326" duration="6973000" />
+      <workItem from="1576327531978" duration="6868000" />
+      <workItem from="1576402175336" duration="9720000" />
+      <workItem from="1576490367831" duration="12002000" />
+      <workItem from="1576516368832" duration="2775000" />
+      <workItem from="1576580505803" duration="7358000" />
+      <workItem from="1576592941057" duration="5959000" />
+      <workItem from="1576599190286" duration="2737000" />
+      <workItem from="1576603804110" duration="796000" />
+      <workItem from="1576605034381" duration="2223000" />
+      <workItem from="1576607392583" duration="921000" />
+    </task>
+    <task id="LOCAL-00001" summary="Fixed MongoClient Connection Error, but get 'undefined' and 3 Warnings">
+      <created>1575897202639</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1575897202639</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add routes Admin with find `admins` collection data API Endpoint. When you want to fetch data, you just be able make a POST to endpoint with dynamic encrypted parameter ( with bcrypt and the plainText is = '123' ) and get response which is you can fetching it.&#10;&#10;The endpoint = &quot;http://localhost:4000/api/v1/admin&quot;, example Request &#10;{&#10;   &quot;req&quot; : &quot;$2b$04$y58NUludsBlBrgbNgQ7AXeDqc7W7F.1XOeetePXWy13Qhp9F25cOS&quot; &#10; }">
+      <created>1575949658895</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1575949658895</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Updated with Error ;)">
+      <created>1575987872734</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1575987872734</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Updated with Error ;)&#10;Ketinggalan om">
+      <created>1575987934322</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1575987934322</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Separate Backend service into 2 Microservices ( Admin &amp; Client ) Services">
+      <created>1576168227537</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1576168227537</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Separate Backend service into 2 Microservices ( Admin &amp; Client ) Services (2)">
+      <created>1576250269133</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1576250269133</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Create select leader function in Client_Backend,&#10;&#10;Endpoint = &quot;http://localhost:5000/select_leader&quot;&#10;&#10;POST Data =&#10;&#10;{&#10;&#9;&quot;code&quot; : &quot;5533&quot;,&#10;&#9;&quot;select_leader&quot; : &quot;3&quot;,&#10;&#9;&quot;event_id&quot; : &quot;5d4&quot;&#10;}">
+      <created>1576325266128</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1576325266128</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add Database Schema">
+      <created>1576416292437</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1576416292437</updated>
+    </task>
+    <task id="LOCAL-00009" summary="All done for Signup and Verify Email Feature,&#10;&#10;How to using it :&#10;&#10;1. POST data to http://localhost:4000/signup, the params =&#10;&#10;{&#10;&#9;&quot;email&quot; : &quot;indrawanjonmuhamad@yahoo.com&quot;,&#10;&#9;&quot;password&quot; : &quot;123akadsj23&quot;&#10;}&#10;&#10;2. Open your email and click the link&#10;&#10;3. The return of the endpoint if success will be return  { result : true } and neither { result : false } (The GET endpoint &#10; [ http://localhost:3000/verification/5df91c8a285afa1b196fb6e1 ] )&#10; &#10;4. if return True the statusAccount on your account in Admins collection will be change to true, it will be like this :&#10;{&#10;&quot;_id&quot;:&quot;5df917ff2609d2125d3d7172&quot;,&#10;&quot;email&quot;:&quot;indrawanjonmuhamad@yahoo.com&quot;,&#10;&quot;password&quot;:&quot;123akadsj23&quot;,&#10;&quot;statusAccount&quot;:true&#10;}">
+      <created>1576607257719</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1576607257719</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="MAXIMUM_HISTORY_ROWS" value="3120" />
+    <MESSAGE value="Fixed MongoClient Connection Error, but get 'undefined' and 3 Warnings" />
+    <MESSAGE value="Fixed MongoClient Connection Error, but get 'undefined'" />
+    <MESSAGE value="Add routes Admin with find `admins` collection data API Endpoint. When you want to fetch data, you just be able make a POST to endpoint with dynamic encrypted parameter ( with bcrypt and the plainText is = '123' ) and get response which is you can fetching it.&#10;&#10;The endpoint = &quot;http://localhost:4000/api/v1/admin&quot;, example Request &#10;{&#10;   &quot;req&quot; : &quot;$2b$04$y58NUludsBlBrgbNgQ7AXeDqc7W7F.1XOeetePXWy13Qhp9F25cOS&quot; &#10; }" />
+    <MESSAGE value="Updated with Error ;)" />
+    <MESSAGE value="Updated with Error ;)&#10;Ketinggalan om" />
+    <MESSAGE value="Separate Backend service into 2 Microservices ( Admin &amp; Client ) Services" />
+    <MESSAGE value="Separate Backend service into 2 Microservices ( Admin &amp; Client ) Services (2)" />
+    <MESSAGE value="Create select leader function in Client_Backend,&#10;&#10;Endpoint = &quot;http://localhost:5000/select_leader&quot;&#10;&#10;POST Data =&#10;&#10;{&#10;&#9;&quot;code&quot; : &quot;5533&quot;,&#10;&#9;&quot;select_leader&quot; : &quot;3&quot;,&#10;&#9;&quot;event_id&quot; : &quot;5d4&quot;&#10;}" />
+    <MESSAGE value="Add Database Schema" />
+    <MESSAGE value="All done for Signup and Verify Email Feature,&#10;&#10;How to using it :&#10;&#10;1. POST data to http://localhost:4000/signup, the params =&#10;&#10;{&#10;&#9;&quot;email&quot; : &quot;indrawanjonmuhamad@yahoo.com&quot;,&#10;&#9;&quot;password&quot; : &quot;123akadsj23&quot;&#10;}&#10;&#10;2. Open your email and click the link&#10;&#10;3. The return of the endpoint if success will be return  { result : true } and neither { result : false } (The GET endpoint &#10; [ http://localhost:3000/verification/5df91c8a285afa1b196fb6e1 ] )&#10; &#10;4. if return True the statusAccount on your account in Admins collection will be change to true, it will be like this :&#10;{&#10;&quot;_id&quot;:&quot;5df917ff2609d2125d3d7172&quot;,&#10;&quot;email&quot;:&quot;indrawanjonmuhamad@yahoo.com&quot;,&#10;&quot;password&quot;:&quot;123akadsj23&quot;,&#10;&quot;statusAccount&quot;:true&#10;}" />
+    <MESSAGE value="All done for Signup and Verify Email Feature,&#10;&#10;How to using it :&#10;&#10;1. POST data to http://localhost:4000/signup, the params =&#10;&#10;{&#10;&#9;&quot;email&quot; : &quot;indrawanjonmuhamad@yahoo.com&quot;,&#10;&#9;&quot;password&quot; : &quot;123akadsj23&quot;&#10;}&#10;&#10;2. Open your email and click the link&#10;&#10;3. The return of the endpoint if success will be return  { result : true } and neither { result : false } (The GET endpoint &#10; [ http://localhost:3000/verification/5df91c8a285afa1b196fb6e1 ] )&#10; &#10;4. if return True the statusAccount on your account in Admins collection will be change to true, it will be like this :&#10;{&#10;&quot;_id&quot;:&quot;5df917ff26`09d2125d3d7172&quot;,&#10;&quot;email&quot;:&quot;indrawanjonmuhamad@yahoo.com&quot;,&#10;&quot;password&quot;:&quot;123akadsj23&quot;,&#10;&quot;statusAccount&quot;:true&#10;}" />
+    <option name="LAST_COMMIT_MESSAGE" value="All done for Signup and Verify Email Feature,&#10;&#10;How to using it :&#10;&#10;1. POST data to http://localhost:4000/signup, the params =&#10;&#10;{&#10;&#9;&quot;email&quot; : &quot;indrawanjonmuhamad@yahoo.com&quot;,&#10;&#9;&quot;password&quot; : &quot;123akadsj23&quot;&#10;}&#10;&#10;2. Open your email and click the link&#10;&#10;3. The return of the endpoint if success will be return  { result : true } and neither { result : false } (The GET endpoint &#10; [ http://localhost:3000/verification/5df91c8a285afa1b196fb6e1 ] )&#10; &#10;4. if return True the statusAccount on your account in Admins collection will be change to true, it will be like this :&#10;{&#10;&quot;_id&quot;:&quot;5df917ff26`09d2125d3d7172&quot;,&#10;&quot;email&quot;:&quot;indrawanjonmuhamad@yahoo.com&quot;,&#10;&quot;password&quot;:&quot;123akadsj23&quot;,&#10;&quot;statusAccount&quot;:true&#10;}" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+</project>
