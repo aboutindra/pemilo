@@ -27,6 +27,8 @@ class Account{
 
     }
 
+<<<<<<< HEAD
+=======
     async executeSignUp(code_email, data, account) {
         let dat, dat2, sentToCodeEmailCol, sentToCodeEmailColBody;
         let status = false;
@@ -83,6 +85,7 @@ class Account{
         return status;
     }
 
+>>>>>>> dev-indra
 }
 
 module.exports = Account;
