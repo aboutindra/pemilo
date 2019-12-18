@@ -19,6 +19,17 @@ class Account{
 
         return sta;
     }
+
+    async insertVoteData(col, param) {
+        let data;
+
+        data = await col.insertOne(param, function (err, res) {
+            if (err) throw err;
+            return res;
+        });
+
+        return data;
+    }
 }
 
 module.exports = Account;
