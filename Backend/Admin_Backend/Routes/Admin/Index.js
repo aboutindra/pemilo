@@ -21,6 +21,8 @@ app.post("/login", async (req,res) => {
 
 });
 
+<<<<<<< HEAD
+=======
 app.post('/signup', async (req, res) => {
 
     let email = req.body.email;
@@ -33,6 +35,7 @@ app.post('/signup', async (req, res) => {
     res.send({result: status, email: email}) // Ini misalkan sudah oke signup, trus kalo di web biasa nya ada pemberitahuan kayak "Kami sudah mengirimkan kode verif ke (alamat email)" nah alamat email disitu biar lu bisa bikin pemberitahuan kayak gitu
 });
 
+>>>>>>> dev-indra
 app.get('/all', async (req,res)=>{    
     res.send({result: await adm.funcGetAll()});
 });
