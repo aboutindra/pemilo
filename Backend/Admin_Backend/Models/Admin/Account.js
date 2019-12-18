@@ -46,6 +46,34 @@ class Account{
 
 
         status = ((dat !== "") ? true : false);
+    }
+
+    async executeSignUp(code_email, data, account) {
+        let dat, dat2, sentToCodeEmailCol, unique_code;
+        let status = false;
+
+        dat = await data.insertOne(account);
+        /*sentToCodeEmailCol = await code_email.insertOne({ admins_id : account._id, unique_code : hash  })*/
+        dat2 = await data.find(account._id).toArray().then(async function () {
+            const nf = require('node-fetch');
+            sentToCodeEmailCol = await code_email.insertOne({
+                admins_id: account._id,
+                unique_code: account._id
+            }).then(async function () {
+                let body = {email: account.email, unique_code: account._id};
+                nf('http://localhost:3000/sent_code', {
+                    method: 'post',
+                    body: JSON.stringify(body),
+                    headers: {'Content-Type': 'application/json'}
+                })
+            });
+            return true;
+        }).catch(function () {
+            return false;
+        });
+
+        console.log(dat2);
+        status = ((dat !== "" && dat2) ? true : false);
 
         return status;
     }
