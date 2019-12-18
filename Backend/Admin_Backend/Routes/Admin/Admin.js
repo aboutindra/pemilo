@@ -12,6 +12,14 @@ class Admin {
         return mdl.checkForLogin(param);
     }
 
+<<<<<<< HEAD
+=======
+    funcSignUp(email, password, statusAccount) {
+        console.log(email, " | ", password, " | ", statusAccount);
+        let account = {email: email, password: password, statusAccount: statusAccount};
+        return mdl.signUpAdmins(account);
+    }
+>>>>>>> dev-indra
 }
 
 module.exports = Admin;

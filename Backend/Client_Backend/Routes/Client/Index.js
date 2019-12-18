@@ -21,18 +21,18 @@ app.get('/all', async (req,res)=>{
     res.send({result: await client.funcGetAll()});
 });
 
-app.post('/select_leader', async (req,res) => {
+app.post('/select_leader', async (req, res) => {
 
     let code = req.body.code;
     let select_leader = req.body.select_leader;
     let event_id = req.body.event_id;
     console.log({
-        code : code,
-        select_leader : select_leader,
-        event_id : event_id
+        code: code,
+        select_leader: select_leader,
+        event_id: event_id
     });
     let status = await client.funcSelectLeader(code, select_leader, event_id);
-    res.send({result : status});
+    res.send({status: true, result: status});
 
 });
 module.exports = app;
