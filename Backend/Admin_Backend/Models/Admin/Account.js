@@ -26,34 +26,11 @@ class Account{
         return sta;
 
     }
-
-<<<<<<< HEAD
-=======
+    
     async executeSignUp(code_email, data, account) {
-        let dat, dat2, sentToCodeEmailCol, sentToCodeEmailColBody;
-        let status = false;
-
-        dat = await data.insertOne(account);
-
-        dat2 = await data.find(account._id).toArray().then(async function () {
-            const nf = require('node-fetch');
-            let body = {email: account.email, unique_code: account._id};
-            let sentToCodeEmailColBody = {admins_id: account._id, unique_code: account._id};
-            sentToCodeEmailCol = await code_email.insertOne(sentToCodeEmailColBody);
-            nf('http://localhost:3000/sent_code', {
-                method: 'post',
-                body: JSON.stringify(body),
-                headers: {'Content-Type': 'application/json'}
-            })
-        });
-
-
-        status = ((dat !== "") ? true : false);
-    }
-
-    async executeSignUp(code_email, data, account) {
+        
         let dat, dat2, dat3, sentToCodeEmailCol, unique_code;
-        let status = false;
+        let status = false;        
 
         /*sentToCodeEmailCol = await code_email.insertOne({ admins_id : account._id, unique_code : hash  })*/
         dat2 = await data.find({email: account.email}).toArray();
@@ -82,10 +59,10 @@ class Account{
         console.log(dat2);
         status = ((dat !== "" && dat2) ? true : false);
 
-        return status;
+        return status;        
+
     }
 
->>>>>>> dev-indra
 }
 
 module.exports = Account;

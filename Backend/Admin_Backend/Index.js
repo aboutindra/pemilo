@@ -8,11 +8,7 @@ const Mongo = require('./Models/Index');
 const mongo = new Mongo("mongodb://127.0.0.1:27017/pemilo");
 
 const Admin = require('./Routes/Admin/Index');
-<<<<<<< HEAD
 
-=======
-//
->>>>>>> dev-indra
 app.use(express.static(__dirname));
 app.use(bp.json());
 app.use(cors());
