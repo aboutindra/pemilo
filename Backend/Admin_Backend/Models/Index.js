@@ -6,10 +6,9 @@ const sch = new Schema();
 const Account_Admin = require('./Admin/Account');
 const acc_admin = new Account_Admin();
 
-
 class MongoDB{
 
-    constructor(url){            
+    constructor(url){
 
         this.url = url;
         this.db  = '';
@@ -21,7 +20,7 @@ class MongoDB{
 
     startSetup(){
         Mongo.connect(this.url, {useNewUrlParser:true, useUnifiedTopology:true}, (err, con) => {
-            this.db  = con.db('pemilo');            
+            this.db = con.db('pemilo');
             this.adm = this.db.collection('Admins');
             this.codeEmail = this.db.collection('CodeEmail')
         });
@@ -30,13 +29,14 @@ class MongoDB{
 
     //Admin.js
 
-    pullAllAdmins(){                
+    pullAllAdmins() {
         return acc_admin.getDataAll(this.adm);
     }
 
     checkForLogin(param){
         return acc_admin.executeLogin(this.adm, param);
     }
+
 
     //Event.js
 
@@ -50,7 +50,6 @@ class MongoDB{
         return acc_admin.executeSignUp(this.codeEmail, this.adm, account);
     }
 
-
     createCollectionRequire(){
         Mongo.connect(this.url, {useNewUrlParser:true, useUnifiedTopology:true}, (err, con)=>{
             sch.createCollectionAll(err, con)
@@ -60,7 +59,7 @@ class MongoDB{
     checkConnection(){
         Mongo.connect(this.url, {useNewUrlParser:true, useUnifiedTopology:true} , function(err) {
             if(err){
-                return console.log("Error : ", err);                
+                return console.log("Error : ", err);
             }else{
                 return console.log("Database [status:'running']");
             }

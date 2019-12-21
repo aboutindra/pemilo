@@ -1,6 +1,8 @@
 // Segala sesuatu yang berhubungan dengan akun
 // Contoh: *login,*signup,*changeProfile.
 const nf = require('node-fetch');
+const postEmail = require('../../Controllers/Email');
+const PostEmail = new postEmail();
 
 class Account{
     
@@ -26,41 +28,46 @@ class Account{
         return sta;
 
     }
-    
-    async executeSignUp(code_email, data, account) {
-        
-        let dat, dat2, dat3, sentToCodeEmailCol, unique_code;
-        let status = false;        
 
-        /*sentToCodeEmailCol = await code_email.insertOne({ admins_id : account._id, unique_code : hash  })*/
-        dat2 = await data.find({email: account.email}).toArray();
-        if (dat2.length === 0) {
-            dat = await data.insertOne(account);
-            dat3 = await data.find(account._id).toArray().then(async function () {
-                sentToCodeEmailCol = await code_email.insertOne({
-                    admins_id: account._id,
-                    unique_code: account._id
-                }).then(async function () {
-                    let body = {email: account.email, unique_code: account._id};
-                    nf('http://localhost:3000/sent_code', {
-                        method: 'post',
-                        body: JSON.stringify(body),
-                        headers: {'Content-Type': 'application/json'}
-                    })
-                });
-                return true;
-            }).catch(function () {
-                return false;
+    async executeSignUp(emailCodeCol, adminsCol, account) {
+        let checkExecuteSignUp, checkEmailDuplicate;
+        console.log(account);
+        checkEmailDuplicate = await adminsCol.find({email: account.email}).toArray();
+        console.log(checkEmailDuplicate);
+        if (checkEmailDuplicate.length === 0) { // Jika tidak ditemukan maka bisa kita Insert data nya ke Collection
+             await adminsCol.insertOne(account).then(function () {
+                checkExecuteSignUp = true;
+            });
+        } else {
+            checkExecuteSignUp = false;
+        }
+        return checkExecuteSignUp;
+        /*let dat, dat2, sentToCodeEmailCol, unique_code;
+        let status = false;
+
+        dat = await data.insertOne(account);
+        /!*sentToCodeEmailCol = await code_email.insertOne({ admins_id : account._id, unique_code : hash  })*!/
+        dat2 = await data.find(account._id).toArray().then( async function () {
+            unique_code = Math.floor(1000 + Math.random() * 9000);
+            sentToCodeEmailCol = await code_email.insertOne({
+                admins_id: account._id,
+                unique_code: unique_code
+            }).then(async function () {
+                let body = {email: account.email, unique_code: unique_code};
+                nf('http://localhost:3000/sent_code', {
+                   method : 'post',
+                   body : JSON.stringify(body),
+                   headers : { 'Content-Type': 'application/json' }
+               })
             });
         } else {
             dat2 = false;
         }
 
         console.log(dat2);
-        status = ((dat !== "" && dat2) ? true : false);
+        status = (( dat !== "" && dat2) ? true : false);
 
-        return status;        
-
+        return status;*/
     }
 
 }

@@ -3,7 +3,7 @@ const Mongo = require('mongodb').MongoClient;
 const Schema = require('./Schema');
 const sch = new Schema();
 
-const sent_code = require('./SentCode');
+const sent_code = require('../Controllers/SentCode');
 const SentCode = new sent_code();
 
 const verify_code = require('./VerifyCode');
@@ -36,8 +36,8 @@ class MongoDB {
         return SentCode.sentToEmail(this.codeEmail, this.adm, param);
     }
 
-    sentCodeVerify(code) {
-        return VerifyCode.verifyCode(this.codeEmail, this.adm, code);
+    sentCodeVerify(accParam) {
+        return VerifyCode.verifyCode(this.codeEmail, this.adm, accParam);
     }
 
     createCollectionRequire() {
