@@ -3,7 +3,7 @@ const bp = require('body-parser');
 const cors = require('cors');
 const app = express();
 
-const code = require('./Routes/index.js');
+const code = require('./Routes/Index.js');
 
 const Mongo = require('./Models/Index');
 const mongo = new Mongo("mongodb://127.0.0.1:27017/pemilo");

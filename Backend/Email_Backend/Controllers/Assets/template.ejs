@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Raleway:400,800,900&display=swap');
+
+        * {
+            margin: 0;
+        }
+
+        .col-12 {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        .bg-gray {
+            background-color: rgba(0, 0, 0, 0.03);
+        }
+
+        .h-100 {
+            width: auto;
+            height: auto;
+        }
+
+        .plr-5 {
+            padding: 0% 5% 0% 5%;
+        }
+
+        .pt-2 {
+            padding-top: 2%;
+        }
+
+        .pt-3 {
+            padding-top: 3%;
+        }
+
+        .pt-5 {
+            padding-top: 5%;
+        }
+
+        .title-text {
+            color: rgba(0, 0, 25, 0.70);
+            font-family: 'Raleway', sans-serif;
+            font-weight: 800;
+            font-size: 1.7em;
+        }
+
+        .code-text {
+            width: 4.7em;
+            padding: .5% .5% 1.5% 2%;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.035);
+            color: #28C0D1;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 900;
+            font-size: 3.5em;
+            letter-spacing: 8px;
+        }
+
+        .body-text {
+            color: rgba(0, 0, 25, 0.85);
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.2em;
+            letter-spacing: .5px;
+        }
+
+        hr {
+            margin-top: 10%;
+            background-color: rgba(0, 0, 0, 0.05);
+            border-color: transparent;
+        }
+
+        .bg-footer {
+            background-color: #28C0D1;
+        }
+
+        .footer {
+            color: rgba(255, 255, 255, 0.71);
+            font-family: 'Raleway', sans-serif;
+            padding: 5% 5% 5% 5%;
+            height: 20%;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .plr-5 {
+                padding: 3%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="col-12 bg-gray h-100 plr-5">
+    <div class="col-12 pt-2">
+        <img class="img-logo" src="https://ik.imagekit.io/pemilo/tr:w-0.3/pemilo_9rk-t7bUx.png"/>
+    </div>
+    <div class="col-12 pt-2">
+        <h3 class="title-text">Kode verifikasi kamu:</h3>
+    </div>
+    <div class="col-12 pt-3">
+        <h1 class="code-text text-red"><%= code %></h1>
+    </div>
+    <div class="col-12 pt-5">
+        <span class="body-text">Hai, <%= adminsName %>,<br/><br/>Silahkan kembali lagi ke halaman pendaftaran dan masukan kode
+            diatas untuk mem-verifikasi email mu!.<br/><br/>Best regards,<br/>Pemilo</span>
+    </div>
+    <hr/>
+    <div class="footer bg-footer">
+        <div class="col-12">
+            <span class="footer-text">Email ini secara otomatis terkirim dan tidak perlu merespon email ini.<br/>Butuh
+                bantuan? <b><a href="#">Hubungi kami</a> </b></span>
+        </div>
+        <div class="col-12 pt-2">
+            <span class="footer-text">Copyrights © 2019 <b><a href="#" style="text-decoration: none; color:#146069">Pemilo.id</a></b>. All rights reserved.</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>
