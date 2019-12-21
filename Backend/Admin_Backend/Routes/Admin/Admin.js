@@ -12,9 +12,9 @@ class Admin {
         return mdl.checkForLogin(param);
     }
 
-    funcSignUp(email, password, codeAdmin) {
-        console.log(email, " | ", password, "| ", codeAdmin);
-        let account = {email: email, password: password, codeAdmin: codeAdmin};
+    funcSignUp(email, password, codeAdmin, balance) {
+        console.log(email, " | ", password, "| ", codeAdmin, " | ", balance);
+        let account = {email: email, password: password, codeAdmin: codeAdmin, balance: balance};
         return mdl.signUpAdmins(account);
     }
 

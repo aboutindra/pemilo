@@ -7,4 +7,10 @@ class Event {
         return mdl.pullEvent();
     }
 
+    funcAddEvent(eventParam) {
+        return mdl.addEvent(eventParam);
+    }
+
 }
+
+module.exports = Event;

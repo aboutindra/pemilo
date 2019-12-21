@@ -1,8 +1,5 @@
 // Segala sesuatu yang berhubungan dengan akun
 // Contoh: *login,*signup,*changeProfile.
-const nf = require('node-fetch');
-const postEmail = require('../../Controllers/Email');
-const PostEmail = new postEmail();
 
 class Account{
     

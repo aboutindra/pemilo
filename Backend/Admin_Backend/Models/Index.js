@@ -6,6 +6,9 @@ const sch = new Schema();
 const Account_Admin = require('./Admin/Account');
 const acc_admin = new Account_Admin();
 
+const Event = require('./Event/Event');
+const eventModels = new Event();
+
 class MongoDB{
 
     constructor(url){
@@ -22,7 +25,8 @@ class MongoDB{
         Mongo.connect(this.url, {useNewUrlParser:true, useUnifiedTopology:true}, (err, con) => {
             this.db = con.db('pemilo');
             this.adm = this.db.collection('Admins');
-            this.codeEmail = this.db.collection('CodeEmail')
+            this.codeEmail = this.db.collection('CodeEmail');
+            this.event = this.db.collection('Events');
         });
     }
 
@@ -42,6 +46,10 @@ class MongoDB{
 
     pullEvent() {
 
+    }
+
+    addEvent(eventParam) {
+        return eventModels.funcInsertEvent(this.event, this.adm, eventParam);
     }
 
     //For Signup
