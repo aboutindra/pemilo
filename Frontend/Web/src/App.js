@@ -1,5 +1,7 @@
 import React from 'react';
+
 import './Resource/App.css';
+import './Resource/Responsive.css';
 
 import Root from './Root';
 
