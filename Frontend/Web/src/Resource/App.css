@@ -10,6 +10,12 @@
     width: 100%;
     float: left;
 }
+.BodIndex .Pag2{
+    width: 100%;
+    height: 100vh;
+
+    float: left;
+}
 .BodIndex .Pag1 .Left{
     width: 50%;
     float: left;

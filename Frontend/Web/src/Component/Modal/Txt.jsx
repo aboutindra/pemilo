@@ -14,6 +14,9 @@ export default function Txt({config}){
 
     return(
         <div className="BackModal">            
+            <span className="ClosedBtn" onClick={()=>{SetStaModal(false)}}>
+                <i className="fa fa-close"></i>
+            </span>
             <div className="ModalTxt">
                 <div className="Box">
                     <div className="Group">
@@ -40,10 +43,7 @@ export default function Txt({config}){
                         </div>
                     </div>
                 </div>
-            </div>
-            <span className="ClosedBtn" onClick={()=>{SetStaModal(false)}}>
-                x
-            </span>
+            </div>            
         </div>
     );
 }

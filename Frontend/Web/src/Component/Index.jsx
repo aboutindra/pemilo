@@ -41,6 +41,7 @@ export default function Index(){
         <div className="Parent">
             <IndexModal tipe={"input"} sta={StaModal} config={{title:"Testing", txt:"Hello", txtBtn:"Cek Account", place:"Email Code", func:print}} />
             <div className="BodIndex">
+
                 <div className="Pag1">
                     <div className="Left">
                         <div className="Group">
@@ -58,6 +59,11 @@ export default function Index(){
                         </div>
                     </div>                                   
                 </div>                        
+
+                <div className="Pag2">
+                    
+                </div>
+
             </div>
         </div>
     );
