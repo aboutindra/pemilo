@@ -15,6 +15,11 @@
 }
 
 @media screen and (max-width:900px){
+    
+    .BodSignup .Box:hover{
+        box-shadow: none;
+    }
+
     .BodIndex .Pag1 .Left{
         width: 100%;
         float: left;
