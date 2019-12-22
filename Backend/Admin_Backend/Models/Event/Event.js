@@ -1,6 +1,7 @@
 const ObjectId = require('mongodb').ObjectId;
 
 class Event {
+
     async funcInsertEvent(eventsCol, adminsCol, eventParam) {
         let totalPrice, checkEnoughBalance, finalBalance, statusUpdateAdminsBalance, statusInsertEvents,
             statusFuncInsertEvent;
@@ -17,23 +18,30 @@ class Event {
         console.log(checkEnoughBalance);
 
         if (checkEnoughBalance.length !== 0) {
+
             console.log("ID nya ketemu");
-            if (checkEnoughBalance[0].balance >= totalPrice) {
+
+            if (checkEnoughBalance[0].balance >= 0 /*totalPrice*/) {
+
                 console.log("Duitnya Pas");
-                finalBalance = checkEnoughBalance[0].balance - totalPrice;
+                finalBalance = checkEnoughBalance[0].balance - 0 /*totalPrice*/;
                 console.log(finalBalance, "<- Sisa Duitnya");
                 statusUpdateAdminsBalance = await adminsCol.findOneAndUpdate({_id: ObjectId(eventParam.admins_id)}, {$set: {balance: finalBalance}});
                 console.log(statusUpdateAdminsBalance);
                 statusInsertEvents = await eventsCol.insertOne(eventParam);
 
                 if (statusUpdateAdminsBalance && statusInsertEvents) {
+
                     console.log("Harusnya Oke");
                     statusFuncInsertEvent = true;
+
                 }
             }
         }
         return statusFuncInsertEvent;
     }
+
+
 }
 
 module.exports = Event;

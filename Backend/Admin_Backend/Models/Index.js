@@ -37,8 +37,8 @@ class MongoDB{
         return acc_admin.getDataAll(this.adm);
     }
 
-    checkForLogin(param){
-        return acc_admin.executeLogin(this.adm, param);
+    checkForLogin(accountParam) {
+        return acc_admin.executeLogin(this.adm, accountParam);
     }
 
 

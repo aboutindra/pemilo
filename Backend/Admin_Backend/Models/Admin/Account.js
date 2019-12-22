@@ -13,16 +13,18 @@ class Account{
 
     }
 
-    async executeLogin(col, param){
+    async executeLogin(adminsCol, param) {
 
-        let dat;
-        let sta = false;           
+        let findAccount, statusExecuteLogin;
+        statusExecuteLogin = false;
 
-        dat =  await col.find(param).toArray();        
+        findAccount = await adminsCol.find(param).toArray();
 
-        sta = (( dat !== "") ? true : false);
+        console.log(findAccount);
 
-        return sta;
+        statusExecuteLogin = ((findAccount.length !== 0) ? true : false);
+
+        return statusExecuteLogin;
 
     }
 

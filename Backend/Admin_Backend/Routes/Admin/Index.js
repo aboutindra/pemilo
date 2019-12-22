@@ -13,14 +13,11 @@ app.use(bp.json());
 
 app.post("/login", async (req,res) => {
 
-    let usr = req.body.username;
-    let pas = req.body.password;
+    let email = req.body.email;
+    let password = req.body.password;
+    let accountParam = {email: email, password: password};
 
-    let sta = false;
-
-    sta = await adm.funcLogin(usr, pas);
-
-    res.send({result: sta});
+    res.send({result: await adm.funcLogin(accountParam)});
 
 });
 
