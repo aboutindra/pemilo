@@ -1,15 +1,15 @@
 import React,{useState} from 'react';
 
-export const Test = React.createContext({});
+export const CntxtStaModal1 = React.createContext({});
 
 export default function Store({children}){
 
-    let [count, setCount] = useState(0);
+    const [StaModal, SetStaModal] = useState(false);
 
-    return(
-        <Test.Provider value={{count, setCount}}>
+    return(        
+        <CntxtStaModal1.Provider value={[StaModal, SetStaModal]}>
             {children}
-        </Test.Provider>
+        </CntxtStaModal1.Provider>
     )
 
 }
