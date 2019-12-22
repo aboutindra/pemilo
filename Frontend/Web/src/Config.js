@@ -1,5 +1,6 @@
 import Index from './Component/Index.jsx';
 import Login from './Component/Admin/Login';
+import Signup from './Component/Admin/Signup';
 
 export const Routes = [
     {
@@ -9,5 +10,9 @@ export const Routes = [
     {
         path: '/login',
         component: Login
-    }
+    },
+    {
+        path: '/register',
+        component: Signup
+    },
 ];
