@@ -1,7 +1,5 @@
 import React, {useState, useContext} from 'react'
 
-import '../../Resource/Modal.css';
-
 import { CntxtStaModal1 } from '../../Global/Store';
 
 export default function Txt({config}){
@@ -15,10 +13,7 @@ export default function Txt({config}){
     }
 
     return(
-        <div className="BackModal">
-            <span className="ClosedBtn" onClick={()=>{SetStaModal(false)}}>
-                x
-            </span>
+        <div className="BackModal">            
             <div className="ModalTxt">
                 <div className="Box">
                     <div className="Group">
@@ -46,6 +41,9 @@ export default function Txt({config}){
                     </div>
                 </div>
             </div>
+            <span className="ClosedBtn" onClick={()=>{SetStaModal(false)}}>
+                x
+            </span>
         </div>
     );
 }

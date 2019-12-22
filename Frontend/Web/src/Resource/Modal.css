@@ -10,6 +10,11 @@
 
     overflow: hidden;
 }
+@media screen and (max-width:500px){ 
+    .BackModal{     
+        background-color: white;        
+    }
+}
 .BackModal .ClosedBtn{
     font-weight: bold;
     font-size: 2em;
@@ -30,9 +35,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);;
+    transform: translate(-50%, -50%);
 }
-
 .BackModal .ModalTxt .Box{
     width: 450px;
     min-height: 300px;
@@ -44,7 +48,6 @@
 
     border-radius: 5px;
 }
-
 .BackModal .ModalTxt .Box .Group{
     padding: 35px;
     padding-bottom: 25px;
@@ -96,4 +99,21 @@
 
 .BackModal .ModalTxt .Box .Group .Row4 button:hover{
     background-color: rgba(22, 152, 184, 0.644);
+}
+
+@media screen and (max-width:500px){ 
+    .BackModal .ModalTxt{
+        width: 100%;
+    }
+    .BackModal .ModalTxt .Box{
+        width: 100%;
+        min-height: 300px;
+        height: auto;
+    }
+    .BackModal .ModalTxt .Box .Group{
+        padding: 25px;
+    }
+    .BackModal .ClosedBtn{
+        color: red;
+    }
 }
