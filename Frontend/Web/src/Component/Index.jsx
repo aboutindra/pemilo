@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 import Signup from './Admin/Signup';
 import IndexQoute from './Dashboard/Quote/Index';
@@ -20,6 +20,13 @@ export default function Index(){
             SetItem(nowItem);
         }
     }
+
+    useEffect(()=>{
+        const interval = setInterval(()=>{
+            calculateItem();
+        }, 5000);
+        return () => clearInterval(interval);
+    });
 
     return(
         <div className="BodIndex">
