@@ -51,7 +51,7 @@ export default function Signup(){
                             Sign up for Pemilo.id
                         </button>   
                         <span>
-                            Already have an account? <Link to="/">Sign in</Link>
+                            Already have an account? <Link to="/login">Sign in</Link>
                         </span>
                     </div>
                     

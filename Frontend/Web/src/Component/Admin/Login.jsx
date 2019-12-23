@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 import '../../Resource/App.css';
 import '../../Resource/Responsive.css'
 
@@ -44,7 +46,7 @@ export default function Login(){
                 
                 <div className="Row4">
                     <span>
-                        Not have account Pemilo? 
+                        Not have account Pemilo? <Link to="/register"> Sign up</Link>
                     </span>                        
                 </div>
 
