@@ -33,7 +33,7 @@ export default function Login(){
                                 </span>
                             </div>
                             <div className="row4">
-                                <input type="text" className="input" />
+                                <input type="password" className="input" />
                             </div>
                         </div>
                         <div className="Row3">
