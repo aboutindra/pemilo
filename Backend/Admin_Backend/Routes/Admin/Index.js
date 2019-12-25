@@ -9,9 +9,12 @@ const adm = new Admin();
 const Event = require('./Event');
 const event = new Event();
 
+const Leader = require('./Leader');
+const leader = new Leader();
+
 app.use(bp.json());
 
-app.post("/login", async (req,res) => {
+app.post("/signin", async (req, res) => {
 
     let email = req.body.email;
     let password = req.body.password;
@@ -66,6 +69,18 @@ app.post('/add_event', async (req, res) => {
 
 });
 
+
+//Leader.js
+
+app.post('/add_leader', async (req, res) => {
+
+    let events_id = req.body.events_id;
+    let candidate = req.body.candidate;
+    let leaderParam = {events_id: events_id, candidate: candidate};
+
+    res.send({result: await leader.funcAddLeader(leaderParam)});
+
+});
 /*router.post("/admin_add_event", function (req,res,next) {
     var encryptedReq = req.body.req;
     async function compareHashReq(encryptedReq) {

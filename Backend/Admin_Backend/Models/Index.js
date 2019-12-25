@@ -9,6 +9,9 @@ const acc_admin = new Account_Admin();
 const Event = require('./Event/Event');
 const eventModels = new Event();
 
+const Leader = require('/Leader/Leader');
+const leader = new Leader();
+
 class MongoDB{
 
     constructor(url){
@@ -27,6 +30,7 @@ class MongoDB{
             this.adm = this.db.collection('Admins');
             this.codeEmail = this.db.collection('CodeEmail');
             this.event = this.db.collection('Events');
+            this.leader = this.db.collection('Leaders')
         });
     }
 
@@ -50,6 +54,11 @@ class MongoDB{
 
     addEvent(eventParam) {
         return eventModels.funcInsertEvent(this.event, this.adm, eventParam);
+    }
+
+    //Leader.js
+    funcAddLeader(leaderParam) {
+        return leader.insertLeader(this.leader, leaderParam);
     }
 
     //For Signup
