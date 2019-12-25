@@ -9,7 +9,7 @@ const acc_admin = new Account_Admin();
 const Event = require('./Event/Event');
 const eventModels = new Event();
 
-const Leader = require('/Leader/Leader');
+const Leader = require('./Leader/Leader');
 const leader = new Leader();
 
 class MongoDB{
@@ -50,6 +50,10 @@ class MongoDB{
 
     pullEvent() {
 
+    }
+
+    pullEventList(admins_id) {
+        return eventModels.funcPullEventList(this.event, admins_id);
     }
 
     addEvent(eventParam) {

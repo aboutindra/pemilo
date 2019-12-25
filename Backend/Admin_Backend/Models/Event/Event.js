@@ -41,7 +41,20 @@ class Event {
         return statusFuncInsertEvent;
     }
 
+    funcPullEventList(eventsCol, admins_id) {
 
+        let checkEventByAdminId, resultFuncPullEventList;
+        checkEventByAdminId = eventsCol.find({admins_id: ObjectId(admins_id)}).toArray();
+
+        if (checkEventByAdminId.length === 0) {
+            resultFuncPullEventList = {result: false};
+            return resultFuncPullEventList;
+        } else {
+            resultFuncPullEventList = {result: checkEventByAdminId};
+            return resultFuncPullEventList;
+        }
+
+    }
 }
 
 module.exports = Event;

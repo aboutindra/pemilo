@@ -3,7 +3,7 @@ const mdl = new Model("mongodb://127.0.0.1:27017/pemilo");
 
 class Leader {
 
-    async funcAddLeader(leaderParam) {
+    funcAddLeader(leaderParam) {
         return mdl.funcAddLeader(leaderParam);
     }
 
