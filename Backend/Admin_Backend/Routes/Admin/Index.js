@@ -76,6 +76,7 @@ app.post('/get_event_list', async (req, res) => {
     res.send(await event.funcGetEventList(admins_id))
 });
 
+
 //Leader.js
 
 app.post('/add_leader', async (req, res) => {
@@ -88,6 +89,12 @@ app.post('/add_leader', async (req, res) => {
 
 });
 
+app.post('/get_leader', async (req, res) => {
+
+    let events_id = req.body.events_id;
+
+    res.send({result: leader.funcGetLeader(events_id)});
+});
 /*router.post("/admin_add_event", function (req,res,next) {
     var encryptedReq = req.body.req;
     async function compareHashReq(encryptedReq) {

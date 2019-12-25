@@ -7,6 +7,9 @@ class Leader {
         return mdl.funcAddLeader(leaderParam);
     }
 
+    funcGetLeader(events_id) {
+        return mdl.funcGetLeader(events_id);
+    }
 }
 
 module.exports = Leader;

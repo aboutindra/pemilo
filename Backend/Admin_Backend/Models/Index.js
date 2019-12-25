@@ -65,6 +65,10 @@ class MongoDB{
         return leader.insertLeader(this.leader, leaderParam);
     }
 
+    funcGetLeader(events_id) {
+        return leader.pullLeader(this.leader, events_id);
+    }
+
     //For Signup
 
     signUpAdmins(account) {
