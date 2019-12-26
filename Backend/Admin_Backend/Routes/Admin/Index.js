@@ -69,8 +69,7 @@ app.post('/add_event', async (req, res) => {
 });
 
 app.post('/get_event_list', async (req, res) => {
-    let admins_id = req.body.request_id;
-
+    let admins_id = req.body.admins_id;
     res.send(await event.funcGetEventList(admins_id))
 });
 
