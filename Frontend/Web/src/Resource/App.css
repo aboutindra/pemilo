@@ -17,11 +17,11 @@
     float: left;
 }
 .BodIndex .Pag1 .Left{
-    width: 50%;
+    width: 55%;
     float: left;
 }
 .BodIndex .Pag1 .Right{
-    width: 50%;
+    width: 45%;
     float: left;
 }
 .BodIndex .Pag1 .Left .Group , .BodIndex .Pag1 .Right .Group{
@@ -45,7 +45,7 @@
 
 .BodSignup{
     float: left;
-    padding-top: 15px;
+    padding-top: 50px;
 }
 .BodSignup .Box{
     background-color: white;
