@@ -39,7 +39,7 @@ export default function Index(){
 
     return(
         <div className="Parent">
-            <IndexModal tipe={"input"} sta={StaModal} config={{title:"Testing", txt:"Hello", txtBtn:"Cek Account", place:"Email Code", func:print}} />
+            <IndexModal tipe={"input"} sta={StaModal} config={{title:"Verifikasi Email", txt:"Ketik kode verifikasi yang telah kami kirim ke email kamu.", txtBtn:"Cek Account", place:"Email Code", func:print}} />
             <div className="BodIndex">
 
                 <div className="Pag1">
