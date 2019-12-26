@@ -48,7 +48,6 @@ app.post('/add_event', async (req, res) => {
     let eventTitle = req.body.event_title;
     let eventDescription = req.body.event_description;
     let eventOrganization = req.body.event_organization;
-    let eventCode = req.body.event_code;
     let totalCandidate = req.body.total_candidate;
     let totalUser = req.body.total_user;
     let eventStart = req.body.event_start;
@@ -59,7 +58,6 @@ app.post('/add_event', async (req, res) => {
         event_title: eventTitle,
         event_description: eventDescription,
         event_organization: eventOrganization,
-        event_code: eventCode,
         total_candidate: totalCandidate,
         total_user: totalUser,
         event_start: eventStart,

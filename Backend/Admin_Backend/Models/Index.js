@@ -30,7 +30,8 @@ class MongoDB{
             this.adm = this.db.collection('Admins');
             this.codeEmail = this.db.collection('CodeEmail');
             this.event = this.db.collection('Events');
-            this.leader = this.db.collection('Leaders')
+            this.leader = this.db.collection('Leaders');
+            this.qrlink = this.db.collection('QRLinks');
         });
     }
 
@@ -57,7 +58,7 @@ class MongoDB{
     }
 
     addEvent(eventParam) {
-        return eventModels.funcInsertEvent(this.event, this.adm, eventParam);
+        return eventModels.funcInsertEvent(this.qrlink, this.event, this.adm, eventParam);
     }
 
     //Leader.js
