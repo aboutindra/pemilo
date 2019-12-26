@@ -15,9 +15,7 @@
     "cryptojs": "^2.5.3",
     "express": "^4.17.1",
     "g": "^2.0.1",
-    "http": "0.0.0",
     "mongodb": "^3.4.0",
-    "node-fetch": "^2.6.0",
-    "socket.io": "^2.3.0"
+    "node-fetch": "^2.6.0"
   }
 }
