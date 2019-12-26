@@ -12,7 +12,7 @@ class Leader {
 
         findLeaderByEventId = leaderCol.find({events_id: events_id}).toArray();
 
-        if ((findLeaderByEventId.length === 0) ? statusPullLeader = false : statusPullLeader = {
+        if ((findLeaderByEventId.length === 0) ? statusPullLeader = {status: false} : statusPullLeader = {
             status: true,
             result: findLeaderByEventId
         }) ;
