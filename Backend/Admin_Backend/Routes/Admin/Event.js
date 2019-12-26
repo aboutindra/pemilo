@@ -11,6 +11,10 @@ class Event {
         return mdl.addEvent(eventParam);
     }
 
+    funcGetEventList(admins_id) {
+        return mdl.pullEventList(admins_id);
+    }
+
 }
 
 module.exports = Event;

@@ -9,15 +9,18 @@ const adm = new Admin();
 const Event = require('./Event');
 const event = new Event();
 
+const Leader = require('./Leader');
+const leader = new Leader();
+
 app.use(bp.json());
 
-app.post("/login", async (req,res) => {
+app.post("/signin", async (req, res) => {
 
     let email = req.body.email;
     let password = req.body.password;
     let accountParam = {email: email, password: password};
 
-    res.send({result: await adm.funcLogin(accountParam)});
+    res.send(await adm.funcLogin(accountParam));
 
 });
 
@@ -25,11 +28,10 @@ app.post('/signup', async (req, res) => {
 
     let email = req.body.email;
     let password = req.body.password;
-    let codeAdmin = req.body.code_admin;
     let balance = 0;
 
     let status = false;
-    status = await adm.funcSignUp(email, password, codeAdmin, balance);
+    status = await adm.funcSignUp(email, password, balance);
     console.log(status, " <- Statusnya");
     res.send({result: status});
 });
@@ -37,6 +39,8 @@ app.post('/signup', async (req, res) => {
 app.get('/get_admin', async (req, res) => {
     res.send({result: await adm.funcGetAll()});
 });
+
+//Event
 
 app.post('/add_event', async (req, res) => {
 
@@ -66,6 +70,31 @@ app.post('/add_event', async (req, res) => {
 
 });
 
+app.post('/get_event_list', async (req, res) => {
+    let admins_id = req.body.request_id;
+
+    res.send(await event.funcGetEventList(admins_id))
+});
+
+
+//Leader.js
+
+app.post('/add_leader', async (req, res) => {
+
+    let events_id = req.body.events_id;
+    let candidate = req.body.candidate;
+    let leaderParam = {events_id: events_id, candidate: candidate};
+
+    res.send({result: await leader.funcAddLeader(leaderParam)});
+
+});
+
+app.post('/get_leader', async (req, res) => {
+
+    let events_id = req.body.events_id;
+
+    res.send({result: leader.funcGetLeader(events_id)});
+});
 /*router.post("/admin_add_event", function (req,res,next) {
     var encryptedReq = req.body.req;
     async function compareHashReq(encryptedReq) {
