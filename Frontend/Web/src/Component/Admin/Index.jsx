@@ -5,13 +5,33 @@ import '../../Resource/App.css';
 
 export default function IndexAdmin(){
 
-    let {email} = useParams();
-    const [mail] = useState(email);    
+    const {email} = useParams();
+    const [mail]  = useState(email);    
 
 
     return(
-        <div className="Bod_IndexAdmin">
-            <p>Hello {mail} </p>
+        <div className="BodIdxAdmin">
+            <div className="row1">
+                {mail}
+            </div>
+            <div className="row2">
+                <div className="col1">
+                    <div className="box">
+
+                    </div>
+                </div>
+                <div className="col2">
+                    <div className="box">
+
+                    </div>
+                </div>
+                <div className="col3">
+                    <div className="box">
+
+                    </div>
+                </div>
+            </div>
+
         </div>
     )
 }
