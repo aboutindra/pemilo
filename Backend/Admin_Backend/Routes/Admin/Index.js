@@ -91,8 +91,11 @@ app.post('/add_leader', async (req, res) => {
 app.post('/get_leader', async (req, res) => {
 
     let events_id = req.body.events_id;
+    let admins_id = req.body.admins_id;
 
-    res.send({result: leader.funcGetLeader(events_id)});
+    let idParam = {events_id: events_id, admins_id: admins_id};
+
+    res.send(await leader.funcGetLeader(idParam));
 });
 /*router.post("/admin_add_event", function (req,res,next) {
     var encryptedReq = req.body.req;
