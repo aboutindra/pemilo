@@ -63,7 +63,7 @@ class MongoDB{
 
     //Leader.js
     funcAddLeader(leaderParam) {
-        return leader.insertLeader(this.leader, leaderParam);
+        return leader.insertLeader(this.leader, this.event, leaderParam);
     }
 
     funcGetLeader(events_id) {

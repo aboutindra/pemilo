@@ -73,16 +73,18 @@ app.post('/get_event_list', async (req, res) => {
     res.send(await event.funcGetEventList(admins_id))
 });
 
-
 //Leader.js
 
 app.post('/add_leader', async (req, res) => {
 
+    let admins_id = req.body.admins_id;
     let events_id = req.body.events_id;
     let candidate = req.body.candidate;
-    let leaderParam = {events_id: events_id, candidate: candidate};
+    let leaderParam = {admins_id: admins_id, events_id: events_id, candidate: candidate};
 
-    res.send({result: await leader.funcAddLeader(leaderParam)});
+    console.log(leaderParam);
+
+    res.send(await leader.funcAddLeader(leaderParam));
 
 });
 
