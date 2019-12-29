@@ -5,8 +5,7 @@ import { Link } from 'react-router-dom';
 import { CntxtStaModal1 } from '../../Global/Store';
 
 export default function Signup(){
-
-    const [User, SetUser] = useState("");
+    
     const [Mail, SetMail] = useState("");
     const [Pass, SetPass] = useState("");
 
@@ -29,12 +28,7 @@ export default function Signup(){
                     Let's create an account now!
                 </span>
                 
-                <div className="Form-group">
-                    
-                    <div className="Txt-label">
-                        <label>Pemilo Code</label>
-                    </div>
-                    <input className="Form-input" type="text" value={User} onChange={(e)=>{SetUser(e.target.value)}} />
+                <div className="Form-group">                                    
 
                     <div className="Txt-label">
                         <label>Email</label>

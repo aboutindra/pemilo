@@ -1,4 +1,5 @@
 import React, {useState, useEffect, useContext} from 'react';
+import { useHistory } from 'react-router-dom';
 
 import Signup from './Admin/Signup';
 import IndexQoute from './Dashboard/Quote/Index';
@@ -11,6 +12,8 @@ export default function Index(){
     const [StaModal] = useContext(CntxtStaModal1);
 
     const [Item, SetItem] = useState(0);
+
+    const hisMove = useHistory();
 
     const calculateItem = () => {
         
@@ -26,8 +29,8 @@ export default function Index(){
         }
     }
 
-    const print = () => {
-        console.log("Ada function");
+    const move = () => {
+        hisMove.push("/admin/rezaxxxx02");
     }
 
     useEffect(()=>{
@@ -39,7 +42,7 @@ export default function Index(){
 
     return(
         <div className="Parent">
-            <IndexModal tipe={"input"} sta={StaModal} config={{title:"Testing", txt:"Hello", txtBtn:"Cek Account", place:"Email Code", func:print}} />
+            <IndexModal tipe={"input"} sta={StaModal} config={{title:"Verifikasi Email", txt:"Ketik kode verifikasi yang telah kami kirim ke email kamu.", txtBtn:"Cek Account", place:"Email Code", func:move}} />
             <div className="BodIndex">
 
                 <div className="Pag1">

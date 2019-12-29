@@ -15,7 +15,7 @@
         background-color: white;        
     }
 }
-.BackModal .ClosedBtn{
+.BackModal  .ClosedBtn{
     font-weight: bold;
     font-size: 2em;
 
@@ -23,10 +23,12 @@
 
     float: right;
 
-    padding-right: 35px;
-    padding-top: 15px;
+    padding-right: 25px;
+    padding-top: 5px;
 
     cursor: pointer;
+
+    visibility: visible;
 }
 .BackModal .ClosedBtn:hover{
     color: rgba(255, 255, 255, 0.733);
@@ -100,6 +102,31 @@
 .BackModal .ModalTxt .Box .Group .Row4 button:hover{
     background-color: rgba(22, 152, 184, 0.644);
 }
+.BackModal .ModalTxt .Box .Group .Row5{
+    padding-top: 10px;
+
+    display: none;
+}
+.BackModal .ModalTxt .Box .Group .Row5 button{
+    width: 100%;
+    padding: 15px;
+
+    cursor: pointer;
+
+    background-color: lightgray;
+
+    border: none;
+    border-radius: 5px;
+
+    color: white;
+    font-weight: bold;
+
+    outline: none;
+}
+
+.BackModal .ModalTxt .Box .Group .Row5 button:hover{
+    background-color: rgb(233, 233, 233);
+}
 
 @media screen and (max-width:500px){ 
     .BackModal .ModalTxt{
@@ -113,7 +140,10 @@
     .BackModal .ModalTxt .Box .Group{
         padding: 25px;
     }
-    .BackModal .ClosedBtn{
-        color: red;
+    .BackModal .ClosedBtn{        
+        visibility: hidden;
     }
+    .BackModal .ModalTxt .Box .Group .Row5{
+        display: flex;
+    }    
 }
