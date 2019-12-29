@@ -48,7 +48,6 @@ app.post('/add_event', async (req, res) => {
     let eventTitle = req.body.event_title;
     let eventDescription = req.body.event_description;
     let eventOrganization = req.body.event_organization;
-    let eventCode = req.body.event_code;
     let totalCandidate = req.body.total_candidate;
     let totalUser = req.body.total_user;
     let eventStart = req.body.event_start;
@@ -59,7 +58,6 @@ app.post('/add_event', async (req, res) => {
         event_title: eventTitle,
         event_description: eventDescription,
         event_organization: eventOrganization,
-        event_code: eventCode,
         total_candidate: totalCandidate,
         total_user: totalUser,
         event_start: eventStart,
@@ -71,30 +69,47 @@ app.post('/add_event', async (req, res) => {
 });
 
 app.post('/get_event_list', async (req, res) => {
-    let admins_id = req.body.request_id;
-
+    let admins_id = req.body.admins_id;
     res.send(await event.funcGetEventList(admins_id))
 });
-
 
 //Leader.js
 
 app.post('/add_leader', async (req, res) => {
 
+    let admins_id = req.body.admins_id;
     let events_id = req.body.events_id;
     let candidate = req.body.candidate;
-    let leaderParam = {events_id: events_id, candidate: candidate};
+    let total_vote = 0;
+    let leaderParam = {admins_id: admins_id, events_id: events_id, candidate: candidate, total_vote: total_vote};
 
-    res.send({result: await leader.funcAddLeader(leaderParam)});
+    console.log(leaderParam);
+
+    res.send(await leader.funcAddLeader(leaderParam));
 
 });
 
 app.post('/get_leader', async (req, res) => {
 
     let events_id = req.body.events_id;
+    let admins_id = req.body.admins_id;
 
-    res.send({result: leader.funcGetLeader(events_id)});
+    let idParam = {events_id: events_id, admins_id: admins_id};
+
+    res.send(await leader.funcGetLeader(idParam));
 });
+
+app.post('/select_leader', async (req, res) => {
+
+    let leaders_id = req.body.leaders_id;
+    let events_id = req.body.events_id;
+    let unique_device = req.body.unique_device;
+
+    let selectParam = {leaders_id: leaders_id, events_id: events_id, unique_device: unique_device};
+
+    res.send({result: await leader.funcSelectLeader(selectParam)});
+});
+
 /*router.post("/admin_add_event", function (req,res,next) {
     var encryptedReq = req.body.req;
     async function compareHashReq(encryptedReq) {

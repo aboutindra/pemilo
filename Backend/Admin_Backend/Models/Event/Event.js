@@ -1,20 +1,16 @@
 const ObjectId = require('mongodb').ObjectId;
+const qrcode = require('./../Event/QRCode');
+const QRCode = new qrcode();
 
 class Event {
 
-    async funcInsertEvent(eventsCol, adminsCol, eventParam) {
+    async funcInsertEvent(qrCol, eventsCol, adminsCol, eventParam) {
         let totalPrice, checkEnoughBalance, finalBalance, statusUpdateAdminsBalance, statusInsertEvents,
-            statusFuncInsertEvent;
+            statusFuncInsertEvent, getEventId, QRParameter;
 
         statusFuncInsertEvent = false;
         totalPrice = eventParam.total_user * 1000;
-        checkEnoughBalance = await adminsCol.find({_id: ObjectId(eventParam.admins_id)}, {
-            balance: 1,
-            email: 0,
-            password: 0,
-            codeAdmin: 0,
-            _id: 0
-        }).toArray();
+        checkEnoughBalance = await adminsCol.find({_id: ObjectId(eventParam.admins_id)}).toArray();
         console.log(checkEnoughBalance);
 
         if (checkEnoughBalance.length !== 0) {
@@ -28,29 +24,53 @@ class Event {
                 console.log(finalBalance, "<- Sisa Duitnya");
                 statusUpdateAdminsBalance = await adminsCol.findOneAndUpdate({_id: ObjectId(eventParam.admins_id)}, {$set: {balance: finalBalance}});
                 console.log(statusUpdateAdminsBalance);
-                statusInsertEvents = await eventsCol.insertOne(eventParam);
+                getEventId = await eventsCol.find({admins_id: eventParam.admins_id}).toArray();
+                QRParameter = {
+                    admins_id: checkEnoughBalance[0]._id,
+                    events_id: getEventId[0]._id
+                };
+                let qr_link = await QRCode.convertQRLink(qrCol, QRParameter);
+                statusInsertEvents = await eventsCol.insertOne(
+                    {
+                        admins_id: eventParam.admins_id,
+                        event_title: eventParam.event_title,
+                        event_description: eventParam.event_description,
+                        event_organization: eventParam.event_organization,
+                        total_candidate: eventParam.total_candidate,
+                        total_user: eventParam.total_user,
+                        event_start: eventParam.event_start,
+                        event_end: eventParam.event_end,
+                        qr_link: qr_link
+                    }
+                );
 
                 if (statusUpdateAdminsBalance && statusInsertEvents) {
 
                     console.log("Harusnya Oke");
-                    statusFuncInsertEvent = true;
 
+                    statusFuncInsertEvent = {
+                        admins_id: checkEnoughBalance[0]._id,
+                        events_id: getEventId[0]._id,
+                        qr_link: qr_link
+                    };
                 }
             }
         }
         return statusFuncInsertEvent;
     }
 
-    funcPullEventList(eventsCol, admins_id) {
+    async funcPullEventList(eventsCol, admins_id) {
 
         let checkEventByAdminId, resultFuncPullEventList;
-        checkEventByAdminId = eventsCol.find({admins_id: ObjectId(admins_id)}).toArray();
+
+        checkEventByAdminId = await eventsCol.find({admins_id: admins_id}).toArray();
+        console.log(checkEventByAdminId, admins_id);
 
         if (checkEventByAdminId.length === 0) {
             resultFuncPullEventList = {result: false};
             return resultFuncPullEventList;
         } else {
-            resultFuncPullEventList = {result: checkEventByAdminId};
+            resultFuncPullEventList = {checkEventByAdminId};
             return resultFuncPullEventList;
         }
 

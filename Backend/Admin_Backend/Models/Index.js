@@ -30,7 +30,9 @@ class MongoDB{
             this.adm = this.db.collection('Admins');
             this.codeEmail = this.db.collection('CodeEmail');
             this.event = this.db.collection('Events');
-            this.leader = this.db.collection('Leaders')
+            this.leader = this.db.collection('Leaders');
+            this.qrlink = this.db.collection('QRLinks');
+            this.uniqueDevice = this.db.collection('UniqueDevice');
         });
     }
 
@@ -57,16 +59,20 @@ class MongoDB{
     }
 
     addEvent(eventParam) {
-        return eventModels.funcInsertEvent(this.event, this.adm, eventParam);
+        return eventModels.funcInsertEvent(this.qrlink, this.event, this.adm, eventParam);
     }
 
     //Leader.js
     funcAddLeader(leaderParam) {
-        return leader.insertLeader(this.leader, leaderParam);
+        return leader.insertLeader(this.leader, this.event, leaderParam);
     }
 
     funcGetLeader(events_id) {
         return leader.pullLeader(this.leader, events_id);
+    }
+
+    funcInsertSelectLeader(selectParam) {
+        return leader.insertSelectLeader(this.uniqueDevice, this.leader, this.event, selectParam);
     }
 
     //For Signup
