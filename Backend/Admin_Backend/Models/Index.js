@@ -68,7 +68,7 @@ class MongoDB{
     }
 
     funcGetLeader(events_id) {
-        return leader.pullLeader(this.selectLeader, events_id);
+        return leader.pullLeader(this.leader, events_id);
     }
 
     funcInsertSelectLeader(selectParam) {

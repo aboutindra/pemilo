@@ -34,18 +34,12 @@ class Leader {
         return statusInsertLeader;
     }
 
-    async pullLeader(selectLeaderCol, idParam) {
+    async pullLeader(leaderCol, idParam) {
         let findLeaderByEventId, statusPullLeader;
 
-        findLeaderByEventId = await leaderCol.find(idParam).toArray();
+        findLeaderByEventId = await leaderCol.find({events_id: ObjectId(idParam.events_id)}).toArray();
+        if (findLeaderByEventId.length !== 0 ? statusPullLeader = findLeaderByEventId : statusPullLeader = findLeaderByEventId) ;
 
-        console.log(findLeaderByEventId);
-
-        if ((findLeaderByEventId.length === 0) ? statusPullLeader = {status: false} : statusPullLeader = {
-            status: true,
-            result: findLeaderByEventId
-        }) ;
-        console.log("\n Returnya : \n", statusPullLeader);
         return statusPullLeader;
     }
 
