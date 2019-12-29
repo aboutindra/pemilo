@@ -59,11 +59,12 @@ class Leader {
 
         if (checkFindUniqueDeviceCol.length === 0) {
 
+            let insertUniqueDeviceCol = await uniqueDeviceCol.insertOne(selectParam);
             let totalVoteInLeadersCol = await leadersCol.find({_id: ObjectId(selectParam.leaders_id)}).toArray();
             let totalVote = totalVoteInLeadersCol[0].total_vote + 1;
             let updateTotalVoteInLeadersCol = await leadersCol.findOneAndUpdate({_id: ObjectId(selectParam.leaders_id)}, {$set: {total_vote: totalVote}});
 
-            if (updateTotalVoteInLeadersCol ? statusInsertSelectLeader = true : statusInsertSelectLeader = false) ;
+            if (updateTotalVoteInLeadersCol && insertUniqueDeviceCol ? statusInsertSelectLeader = true : statusInsertSelectLeader = false) ;
 
         }
         /*let checkFindEventsId = await eventsCol.find({_id: ObjectId(selectParam.events_id)}).toArray();
