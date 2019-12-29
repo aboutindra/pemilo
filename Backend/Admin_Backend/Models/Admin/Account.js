@@ -1,8 +1,5 @@
 // Segala sesuatu yang berhubungan dengan akun
 // Contoh: *login,*signup,*changeProfile.
-const nf = require('node-fetch');
-const postEmail = require('../../Controllers/Email');
-const PostEmail = new postEmail();
 
 class Account{
     
@@ -16,16 +13,20 @@ class Account{
 
     }
 
-    async executeLogin(col, param){
+    async executeLogin(adminsCol, param) {
 
-        let dat;
-        let sta = false;           
+        let findAccount, statusExecuteLogin, statusFinal;
+        statusExecuteLogin = false;
 
-        dat =  await col.find(param).toArray();        
+        findAccount = await adminsCol.find(param).toArray();
 
-        sta = (( dat !== "") ? true : false);
+        console.log(findAccount);
 
-        return sta;
+        statusExecuteLogin = ((findAccount.length !== 0) ? true : false);
+
+        statusFinal = {request_id: findAccount[0]._id, result: statusExecuteLogin};
+
+        return statusFinal;
 
     }
 

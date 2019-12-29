@@ -1,13 +1,19 @@
-import React,{useState} from 'react';
+import React,{useState, useContext} from 'react';
 
 import { Link } from 'react-router-dom';
 
+import { CntxtStaModal1 } from '../../Global/Store';
 
 export default function Signup(){
-
-    const [User, SetUser] = useState("");
+    
     const [Mail, SetMail] = useState("");
     const [Pass, SetPass] = useState("");
+
+    const [StaModal, SetStaModal] = useContext(CntxtStaModal1);
+
+    const toggleModal = () => {
+        (StaModal === true) ? SetStaModal(false) : SetStaModal(true);
+    }
 
     return(
         <div className="BodSignup">
@@ -22,12 +28,7 @@ export default function Signup(){
                     Let's create an account now!
                 </span>
                 
-                <div className="Form-group">
-                    
-                    <div className="Txt-label">
-                        <label>Pemilo Code</label>
-                    </div>
-                    <input className="Form-input" type="text" value={User} onChange={(e)=>{SetUser(e.target.value)}} />
+                <div className="Form-group">                                    
 
                     <div className="Txt-label">
                         <label>Email</label>
@@ -40,11 +41,11 @@ export default function Signup(){
                     <input className="Form-input" type="password" value={Pass} onChange={(e)=>{SetPass(e.target.value)}} />                                        
                     
                     <div className="Btn-part">
-                        <button className="BtnSignup">
+                        <button className="BtnSignup" onClick={toggleModal}>
                             Sign up for Pemilo.id
                         </button>   
                         <span>
-                            Already have an account? <Link to="/">Sign in</Link>
+                            Already have an account? <Link to="/login">Sign in</Link>
                         </span>
                     </div>
                     

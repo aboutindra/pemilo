@@ -1,0 +1,149 @@
+.BackModal{
+    width: 100%;
+    height: 100vh;
+
+    background-color: rgba(0, 0, 0, 0.602);
+    
+    position: fixed;
+    
+    font-family: 'Poppins', sans-serif;
+
+    overflow: hidden;
+}
+@media screen and (max-width:500px){ 
+    .BackModal{     
+        background-color: white;        
+    }
+}
+.BackModal  .ClosedBtn{
+    font-weight: bold;
+    font-size: 2em;
+
+    color: white;
+
+    float: right;
+
+    padding-right: 25px;
+    padding-top: 5px;
+
+    cursor: pointer;
+
+    visibility: visible;
+}
+.BackModal .ClosedBtn:hover{
+    color: rgba(255, 255, 255, 0.733);
+}
+.BackModal .ModalTxt{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.BackModal .ModalTxt .Box{
+    width: 450px;
+    min-height: 300px;
+    height: auto;
+    
+    background-color: white;
+
+    text-align: center;
+
+    border-radius: 5px;
+}
+.BackModal .ModalTxt .Box .Group{
+    padding: 35px;
+    padding-bottom: 25px;
+}
+
+.BackModal .ModalTxt .Box .Group .Row1 .txt-title{
+    font-size: 2em;
+    font-weight: bold;
+}
+.BackModal .ModalTxt .Box .Group .Row2{
+    padding-top: 15px;
+}
+.BackModal .ModalTxt .Box .Group .Row2 .txt-desc{
+    font-size: 1em;
+}
+.BackModal .ModalTxt .Box .Group .Row3{
+    padding-top: 65px;
+}
+.BackModal .ModalTxt .Box .Group .Row3 input{
+    padding: 15px;
+    padding-right: 0px;
+
+    width: 95%;
+
+    border-radius: 5px;
+    border: 1px solid lightgray;
+
+    font-family: 'Poppins', sans-serif;
+}
+.BackModal .ModalTxt .Box .Group .Row4{
+    padding-top: 20px;
+}
+.BackModal .ModalTxt .Box .Group .Row4 button{
+    width: 100%;
+    padding: 15px;
+
+    cursor: pointer;
+
+    background-color: rgba(22, 152, 184, 0.794);
+
+    border: none;
+    border-radius: 5px;
+
+    color: white;
+    font-weight: bold;
+
+    outline: none;
+}
+
+.BackModal .ModalTxt .Box .Group .Row4 button:hover{
+    background-color: rgba(22, 152, 184, 0.644);
+}
+.BackModal .ModalTxt .Box .Group .Row5{
+    padding-top: 10px;
+
+    display: none;
+}
+.BackModal .ModalTxt .Box .Group .Row5 button{
+    width: 100%;
+    padding: 15px;
+
+    cursor: pointer;
+
+    background-color: lightgray;
+
+    border: none;
+    border-radius: 5px;
+
+    color: white;
+    font-weight: bold;
+
+    outline: none;
+}
+
+.BackModal .ModalTxt .Box .Group .Row5 button:hover{
+    background-color: rgb(233, 233, 233);
+}
+
+@media screen and (max-width:500px){ 
+    .BackModal .ModalTxt{
+        width: 100%;
+    }
+    .BackModal .ModalTxt .Box{
+        width: 100%;
+        min-height: 300px;
+        height: auto;
+    }
+    .BackModal .ModalTxt .Box .Group{
+        padding: 25px;
+    }
+    .BackModal .ClosedBtn{        
+        visibility: hidden;
+    }
+    .BackModal .ModalTxt .Box .Group .Row5{
+        display: flex;
+    }    
+}

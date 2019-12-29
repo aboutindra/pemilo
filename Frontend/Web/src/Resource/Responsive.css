@@ -15,6 +15,11 @@
 }
 
 @media screen and (max-width:900px){
+    
+    .BodSignup .Box:hover{
+        box-shadow: none;
+    }
+
     .BodIndex .Pag1 .Left{
         width: 100%;
         float: left;
@@ -40,3 +45,53 @@
     }
 }
 
+@media screen and (max-width: 450px){
+    .FrameLog .BodLog .Box:hover{
+        box-shadow: none;
+    }
+}
+
+@media screen and (max-width:350px){
+    .FrameLog{
+        width: 100%;
+    }
+    .FrameLog .BodLog{
+        width: 100%;
+    }
+}
+
+@media screen and (max-height: 850px){
+    .FrameLog{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media screen and (max-height: 500px){
+    .FrameLog{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media screen and (max-height: 425px){
+    .FrameLog{
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media screen and (max-height: 355px){
+    .FrameLog{
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

@@ -6,6 +6,12 @@ const sch = new Schema();
 const Account_Admin = require('./Admin/Account');
 const acc_admin = new Account_Admin();
 
+const Event = require('./Event/Event');
+const eventModels = new Event();
+
+const Leader = require('./Leader/Leader');
+const leader = new Leader();
+
 class MongoDB{
 
     constructor(url){
@@ -22,7 +28,11 @@ class MongoDB{
         Mongo.connect(this.url, {useNewUrlParser:true, useUnifiedTopology:true}, (err, con) => {
             this.db = con.db('pemilo');
             this.adm = this.db.collection('Admins');
-            this.codeEmail = this.db.collection('CodeEmail')
+            this.codeEmail = this.db.collection('CodeEmail');
+            this.event = this.db.collection('Events');
+            this.leader = this.db.collection('Leaders');
+            this.qrlink = this.db.collection('QRLinks');
+            this.uniqueDevice = this.db.collection('UniqueDevice');
         });
     }
 
@@ -33,8 +43,8 @@ class MongoDB{
         return acc_admin.getDataAll(this.adm);
     }
 
-    checkForLogin(param){
-        return acc_admin.executeLogin(this.adm, param);
+    checkForLogin(accountParam) {
+        return acc_admin.executeLogin(this.adm, accountParam);
     }
 
 
@@ -42,6 +52,27 @@ class MongoDB{
 
     pullEvent() {
 
+    }
+
+    pullEventList(admins_id) {
+        return eventModels.funcPullEventList(this.event, admins_id);
+    }
+
+    addEvent(eventParam) {
+        return eventModels.funcInsertEvent(this.qrlink, this.event, this.adm, eventParam);
+    }
+
+    //Leader.js
+    funcAddLeader(leaderParam) {
+        return leader.insertLeader(this.leader, this.event, leaderParam);
+    }
+
+    funcGetLeader(events_id) {
+        return leader.pullLeader(this.leader, events_id);
+    }
+
+    funcInsertSelectLeader(selectParam) {
+        return leader.insertSelectLeader(this.uniqueDevice, this.leader, this.event, selectParam);
     }
 
     //For Signup

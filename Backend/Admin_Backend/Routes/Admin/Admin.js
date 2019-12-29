@@ -7,14 +7,14 @@ class Admin {
         return mdl.pullAllAdmins();
     }
 
-    funcLogin(usr,pas){
-        let param = {username: usr, password: pas};
-        return mdl.checkForLogin(param);
+    funcLogin(accountParam) {
+        console.log(accountParam);
+        return mdl.checkForLogin(accountParam);
     }
 
-    funcSignUp(email, password, codeAdmin) {
-        console.log(email, " | ", password, "| ", codeAdmin);
-        let account = {email: email, password: password, codeAdmin: codeAdmin};
+    funcSignUp(email, password, codeAdmin, balance) {
+        console.log(email, " | ", password, " | ", balance);
+        let account = {email: email, password: password, balance: balance};
         return mdl.signUpAdmins(account);
     }
 
