@@ -39,6 +39,7 @@ class Leader {
 
         findLeaderByEventId = await leaderCol.find(idParam).toArray();
 
+
         console.log(findLeaderByEventId);
 
         if ((findLeaderByEventId.length === 0) ? statusPullLeader = {status: false} : statusPullLeader = {
@@ -53,6 +54,7 @@ class Leader {
         let statusInsertSelectLeader = false;
         let checkFindEventsId = await eventsCol.find({_id: ObjectId(selectParam.events_id)}).toArray();
         let checkFindLeadersId = await leadersCol.find({_id: ObjectId(selectParam.leaders_id)}).toArray();
+        let countTotalLeader = await leadersCol.find({events_id: selectParam.events_id}).toArray();
         let checkFindUniqueDevice = await selectLeadersCol.find({
             events_id: selectParam.events_id,
             unique_device: selectParam.unique_device
@@ -60,11 +62,9 @@ class Leader {
 
         if (checkFindEventsId.length !== 0 && checkFindLeadersId.length !== 0) {
 
-            if (checkFindUniqueDevice.length === 0) {
-                let checkInsertSelectLeader = await selectLeadersCol.insertOne(selectParam);
-                if (checkInsertSelectLeader) {
-                    statusInsertSelectLeader = true;
-                }
+            if (countTotalLeader <= checkFindEventsId[0].total_user && checkFindUniqueDevice.length === 0) {
+                await selectLeadersCol.insertOne(selectParam);
+                statusInsertSelectLeader = true;
             }
 
         }

@@ -108,6 +108,7 @@ app.post('/select_leader', async (req, res) => {
 
     res.send({result: await leader.funcSelectLeader(selectParam)});
 });
+
 /*router.post("/admin_add_event", function (req,res,next) {
     var encryptedReq = req.body.req;
     async function compareHashReq(encryptedReq) {
