@@ -53,21 +53,17 @@ class Leader {
     async insertSelectLeader(selectLeadersCol, leadersCol, eventsCol, selectParam) {
         let statusInsertSelectLeader = false;
         let checkFindEventsId = await eventsCol.find({_id: ObjectId(selectParam.events_id)}).toArray();
-        let checkFindLeadersId = await leadersCol.find({_id: ObjectId(selectParam.leaders_id)}).toArray();
-        let countTotalLeader = await leadersCol.find({events_id: selectParam.events_id}).count();
+        let countTotalLeader = await selectLeadersCol.find({events_id: selectParam.events_id}).count();
         let checkFindUniqueDevice = await selectLeadersCol.find({
             events_id: selectParam.events_id,
             unique_device: selectParam.unique_device
-        });
+        }).toArray();
 
-        if (checkFindEventsId.length !== 0 && checkFindLeadersId.length !== 0) {
-
-            if (countTotalLeader <= checkFindEventsId[0].total_user && checkFindUniqueDevice.length === 0) {
-                await selectLeadersCol.insertOne(selectParam);
-                statusInsertSelectLeader = true;
-            }
-
+        if (countTotalLeader <= checkFindEventsId[0].total_user && checkFindUniqueDevice.length === 0) {
+            await selectLeadersCol.insertOne(selectParam);
+            statusInsertSelectLeader = true;
         }
+
         return statusInsertSelectLeader;
     }
 }
