@@ -46,6 +46,8 @@ class Leader {
     async insertSelectLeader(uniqueDeviceCol, leadersCol, eventsCol, selectParam) {
         let statusInsertSelectLeader = false;
 
+        let totalVoteInLeadersCol = await leadersCol.find({_id: ObjectId(selectParam.leaders_id)}).toArray();
+        let totalVoteInEventsCol = await eventsCol.find({_id: ObjectId(selectParam.events_id)}).toArray();
         let checkFindUniqueDeviceCol = await uniqueDeviceCol.find({
             unique_device: selectParam.unique_device,
             events_id: selectParam.events_id
@@ -53,12 +55,16 @@ class Leader {
 
         if (checkFindUniqueDeviceCol.length === 0) {
 
-            let insertUniqueDeviceCol = await uniqueDeviceCol.insertOne(selectParam);
-            let totalVoteInLeadersCol = await leadersCol.find({_id: ObjectId(selectParam.leaders_id)}).toArray();
-            let totalVote = totalVoteInLeadersCol[0].total_vote + 1;
-            let updateTotalVoteInLeadersCol = await leadersCol.findOneAndUpdate({_id: ObjectId(selectParam.leaders_id)}, {$set: {total_vote: totalVote}});
+            if (totalVoteInLeadersCol[0].total_vote <= totalVoteInEventsCol[0].total_user) {
 
-            if (updateTotalVoteInLeadersCol && insertUniqueDeviceCol ? statusInsertSelectLeader = true : statusInsertSelectLeader = false) ;
+                let insertUniqueDeviceCol = await uniqueDeviceCol.insertOne(selectParam);
+                let totalVote = totalVoteInLeadersCol[0].total_vote + 1;
+                let updateTotalVoteInLeadersCol = await leadersCol.findOneAndUpdate({_id: ObjectId(selectParam.leaders_id)}, {$set: {total_vote: totalVote}});
+
+                if (updateTotalVoteInLeadersCol && insertUniqueDeviceCol ? statusInsertSelectLeader = true : statusInsertSelectLeader = false) ;
+
+
+            }
 
         }
         /*let checkFindEventsId = await eventsCol.find({_id: ObjectId(selectParam.events_id)}).toArray();
