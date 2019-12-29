@@ -54,7 +54,7 @@ class Leader {
         let statusInsertSelectLeader = false;
         let checkFindEventsId = await eventsCol.find({_id: ObjectId(selectParam.events_id)}).toArray();
         let checkFindLeadersId = await leadersCol.find({_id: ObjectId(selectParam.leaders_id)}).toArray();
-        let countTotalLeader = await leadersCol.find({events_id: selectParam.events_id}).toArray();
+        let countTotalLeader = await leadersCol.find({events_id: selectParam.events_id}).count();
         let checkFindUniqueDevice = await selectLeadersCol.find({
             events_id: selectParam.events_id,
             unique_device: selectParam.unique_device
