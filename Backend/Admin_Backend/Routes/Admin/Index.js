@@ -80,7 +80,8 @@ app.post('/add_leader', async (req, res) => {
     let admins_id = req.body.admins_id;
     let events_id = req.body.events_id;
     let candidate = req.body.candidate;
-    let leaderParam = {admins_id: admins_id, events_id: events_id, candidate: candidate};
+    let total_vote = 0;
+    let leaderParam = {admins_id: admins_id, events_id: events_id, candidate: candidate, total_vote: total_vote};
 
     console.log(leaderParam);
 

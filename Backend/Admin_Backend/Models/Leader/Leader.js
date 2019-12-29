@@ -34,11 +34,10 @@ class Leader {
         return statusInsertLeader;
     }
 
-    async pullLeader(leaderCol, idParam) {
+    async pullLeader(selectLeaderCol, idParam) {
         let findLeaderByEventId, statusPullLeader;
 
         findLeaderByEventId = await leaderCol.find(idParam).toArray();
-
 
         console.log(findLeaderByEventId);
 
@@ -50,9 +49,24 @@ class Leader {
         return statusPullLeader;
     }
 
-    async insertSelectLeader(selectLeadersCol, leadersCol, eventsCol, selectParam) {
+    async insertSelectLeader(uniqueDeviceCol, leadersCol, eventsCol, selectParam) {
         let statusInsertSelectLeader = false;
-        let checkFindEventsId = await eventsCol.find({_id: ObjectId(selectParam.events_id)}).toArray();
+
+        let checkFindUniqueDeviceCol = await uniqueDeviceCol.find({
+            unique_device: selectParam.unique_device,
+            events_id: selectParam.events_id
+        }).toArray();
+
+        if (checkFindUniqueDeviceCol.length === 0) {
+
+            let totalVoteInLeadersCol = await leadersCol.find({_id: ObjectId(selectParam.leaders_id)}).toArray();
+            let totalVote = totalVoteInLeadersCol[0].total_vote + 1;
+            let updateTotalVoteInLeadersCol = await leadersCol.findOneAndUpdate({_id: ObjectId(selectParam.leaders_id)}, {$set: {total_vote: totalVote}});
+
+            if (updateTotalVoteInLeadersCol ? statusInsertSelectLeader = true : statusInsertSelectLeader = false) ;
+
+        }
+        /*let checkFindEventsId = await eventsCol.find({_id: ObjectId(selectParam.events_id)}).toArray();
         let countTotalLeader = await selectLeadersCol.find({events_id: selectParam.events_id}).count();
         let checkFindUniqueDevice = await selectLeadersCol.find({
             events_id: selectParam.events_id,
@@ -62,7 +76,7 @@ class Leader {
         if (countTotalLeader <= checkFindEventsId[0].total_user && checkFindUniqueDevice.length === 0) {
             await selectLeadersCol.insertOne(selectParam);
             statusInsertSelectLeader = true;
-        }
+        }*/
 
         return statusInsertSelectLeader;
     }

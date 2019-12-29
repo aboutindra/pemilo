@@ -32,7 +32,7 @@ class MongoDB{
             this.event = this.db.collection('Events');
             this.leader = this.db.collection('Leaders');
             this.qrlink = this.db.collection('QRLinks');
-            this.selectLeader = this.db.collection('SelectLeaders');
+            this.uniqueDevice = this.db.collection('UniqueDevice');
         });
     }
 
@@ -68,11 +68,11 @@ class MongoDB{
     }
 
     funcGetLeader(events_id) {
-        return leader.pullLeader(this.leader, events_id);
+        return leader.pullLeader(this.selectLeader, events_id);
     }
 
     funcInsertSelectLeader(selectParam) {
-        return leader.insertSelectLeader(this.selectLeader, this.leader, this.event, selectParam);
+        return leader.insertSelectLeader(this.uniqueDevice, this.leader, this.event, selectParam);
     }
 
     //For Signup
