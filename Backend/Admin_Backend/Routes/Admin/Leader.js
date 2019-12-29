@@ -10,6 +10,10 @@ class Leader {
     funcGetLeader(events_id) {
         return mdl.funcGetLeader(events_id);
     }
+
+    funcSelectLeader(selectParam) {
+        return mdl.funcInsertSelectLeader(selectParam);
+    }
 }
 
 module.exports = Leader;

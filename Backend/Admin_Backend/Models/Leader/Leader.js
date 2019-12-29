@@ -48,6 +48,28 @@ class Leader {
         console.log("\n Returnya : \n", statusPullLeader);
         return statusPullLeader;
     }
+
+    async insertSelectLeader(selectLeadersCol, leadersCol, eventsCol, selectParam) {
+        let statusInsertSelectLeader = false;
+        let checkFindEventsId = await eventsCol.find({_id: ObjectId(selectParam.events_id)}).toArray();
+        let checkFindLeadersId = await leadersCol.find({_id: ObjectId(selectParam.leaders_id)}).toArray();
+        let checkFindUniqueDevice = await selectLeadersCol.find({
+            events_id: selectParam.events_id,
+            unique_device: selectParam.unique_device
+        });
+
+        if (checkFindEventsId.length !== 0 && checkFindLeadersId.length !== 0) {
+
+            if (checkFindUniqueDevice.length === 0) {
+                let checkInsertSelectLeader = await selectLeadersCol.insertOne(selectParam);
+                if (checkInsertSelectLeader) {
+                    statusInsertSelectLeader = true;
+                }
+            }
+
+        }
+        return statusInsertSelectLeader;
+    }
 }
 
 module.exports = Leader;

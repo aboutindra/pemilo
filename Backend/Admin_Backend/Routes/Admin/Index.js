@@ -97,6 +97,17 @@ app.post('/get_leader', async (req, res) => {
 
     res.send(await leader.funcGetLeader(idParam));
 });
+
+app.post('/select_leader', async (req, res) => {
+
+    let leaders_id = req.body.leaders_id;
+    let events_id = req.body.events_id;
+    let unique_device = req.body.unique_device;
+
+    let selectParam = {leaders_id: leaders_id, events_id: events_id, unique_device: unique_device};
+
+    res.send({result: await leader.funcSelectLeader(selectParam)});
+});
 /*router.post("/admin_add_event", function (req,res,next) {
     var encryptedReq = req.body.req;
     async function compareHashReq(encryptedReq) {
