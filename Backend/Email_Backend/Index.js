@@ -12,11 +12,11 @@ app.use(bp.json());
 app.use(cors());
 app.use('/', code);
 
-app.listen(3000, async (err) => {
+app.listen(6000, async (err) => {
     if (err) {
         console.log("Error")
     } else {
-        console.log("Server http://localhost:3000/ [status:running]");
+        console.log("Server http://localhost:6000/ [status:running]");
     }
 
     await mongo.createCollectionRequire();
