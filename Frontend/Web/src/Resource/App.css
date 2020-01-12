@@ -262,3 +262,36 @@
     font-family: 'Quicksand', sans-serif;
     font-size: 0.8em;
 }
+
+.BodScanner{
+    width: 100%;    
+    margin: 0;
+}
+
+.BodScanner .container .box{
+    
+    width: 450px;
+    height: auto;
+
+    margin: auto;
+    
+    position: absolute;
+    
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+}
+
+.BodScanner .container .box .group{
+    padding: 25px;
+}
+
+.BodScanner .container .box .group .row1{
+    padding-top: 10px;
+}
+
+.BodScanner .container .box .group .row1 .scan{
+    width: 100%;
+}
