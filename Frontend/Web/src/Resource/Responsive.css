@@ -95,3 +95,12 @@
         transform: translate(-50%, -50%);
     }
 }
+
+@media screen and (max-width: 450px){
+    .BodScanner .container .box .group{
+        padding: 0px;
+    }
+    .BodScanner .container .box .group .row1{
+        padding-top: 0px;
+    }
+}
