@@ -4,6 +4,7 @@ import Signup from './Component/Admin/Signup';
 
 import IndexAdmin from './Component/Admin/Index';
 import IndexClient from './Component/Client/Index';
+import HomeIndex from "./Component/Dashboard/Home/Index";
 
 export const Routes = [
     {
@@ -22,6 +23,10 @@ export const Routes = [
         path: '/admin/:email',
         component: IndexAdmin
     },
+    {
+        path: '/dashboard',
+        component: HomeIndex
+    }
     {
         path: '/scan',
         component: IndexClient
