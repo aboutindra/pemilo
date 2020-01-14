@@ -1,1 +1,41 @@
-Test
+Cara_untuk Get_QR_Link() {
+
+    1. POST Data ke endpoint http://localhost:4000/get_event_list
+    2. POST Data Parameter sbb =
+        {
+        	"admins_id" : "5dfe6ada87badc2a5086e62d"
+        }
+    3. Jika positif akan return =
+        {
+            "checkEventByAdminId": [
+                {
+                    "_id": "5e04f1dc67339a26d5f7258c",
+                    "admins_id": "5dfe6ada87badc2a5086e62d",
+                    "event_title": "Pemilu OSIS SMK Negeri 5 Bekasi Periode 2019-2020",
+                    "event_description": "Pemilihan Ketua dan Wakil OSIS untuk periode 2019-2020",
+                    "event_organization": "SMK Negeri 5 Kota Bekasi",
+                    "total_candidate": 3,
+                    "total_user": 100,
+                    "event_start": "2019",
+                    "event_end": "2020",
+                    "qr_link": "https://pemilo.id/5dfe6ada87badc2a5086e62d/5dfe70b6194e8630201d975a/"
+                }
+            ]
+        }
+    4. Silahkan ambil object qr_link nya ^^
+}
+
+Cara_untuk_Select_Leader () {
+
+    1. POST Data ke endpoint http://localhost:4000/select_leader
+    2. POST Data Parameter sbb =
+        {
+        	"leaders_id" : "5e05aed91a194f199b636e90",
+        	"events_id" : "5e04f1dc67339a26d5f7258c",
+        	"unique_device" : "123"
+        }
+    3. Jika positif akan return =
+        {
+            "return" : true
+        }
+}
