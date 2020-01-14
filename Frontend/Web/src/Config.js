@@ -26,7 +26,7 @@ export const Routes = [
     {
         path: '/dashboard',
         component: HomeIndex
-    }
+    },
     {
         path: '/scan',
         component: IndexClient

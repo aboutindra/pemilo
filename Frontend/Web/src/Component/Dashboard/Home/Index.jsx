@@ -3,7 +3,7 @@ import './../../../Resource/App.css';
 
 import HomeCenter from "./Center";
 import HomeLeft from "./Left/Index";
-import HomeRight from "./Right";
+import HomeRight from "./Right/Index";
 
 export default function HomeIndex() {
     return(
