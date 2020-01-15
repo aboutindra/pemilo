@@ -1,41 +1,26 @@
-Cara_untuk Get_QR_Link() {
+########## Flow explanation in backend 101 ##########
+#  1. Di Frontend Signup, isi email dan Request POST ke http://localhost:6000/request_code, dgn param sbb =
+    {
+        "email" : "indra@deepcode.me"
+    } ( 200 = { result : true } )
 
-    1. POST Data ke endpoint http://localhost:4000/get_event_list
-    2. POST Data Parameter sbb =
-        {
-        	"admins_id" : "5dfe6ada87badc2a5086e62d"
-        }
-    3. Jika positif akan return =
-        {
-            "checkEventByAdminId": [
-                {
-                    "_id": "5e04f1dc67339a26d5f7258c",
-                    "admins_id": "5dfe6ada87badc2a5086e62d",
-                    "event_title": "Pemilu OSIS SMK Negeri 5 Bekasi Periode 2019-2020",
-                    "event_description": "Pemilihan Ketua dan Wakil OSIS untuk periode 2019-2020",
-                    "event_organization": "SMK Negeri 5 Kota Bekasi",
-                    "total_candidate": 3,
-                    "total_user": 100,
-                    "event_start": "2019",
-                    "event_end": "2020",
-                    "qr_link": "https://pemilo.id/5dfe6ada87badc2a5086e62d/5dfe70b6194e8630201d975a/"
-                }
-            ]
-        }
-    4. Silahkan ambil object qr_link nya ^^
-}
+#  2. Setelah itu, lanjut verifikasi code nya di http://localhost:6000/request_code/status, dgn param sbb =
+    {
+        "email" : "indra@deepcode.me",
+        "verifCode" : "1920"
+    } ( 200 = { result : true } ) -> status_verification di collection CodeEmail set True
 
-Cara_untuk_Select_Leader () {
+#  3. Jika di Frontend diraasa semuanya sudah True bisa lanjut Signup POST Data di http://localhost:4000/signin, dgn param sbb =
+    {
+        "email" : "indra@deepcode.me",
+        "password" : "indra123Q"
+    } ( 200 = { result : true } ) -> Sudah terinsert di collection Admins
 
-    1. POST Data ke endpoint http://localhost:4000/select_leader
-    2. POST Data Parameter sbb =
-        {
-        	"leaders_id" : "5e05aed91a194f199b636e90",
-        	"events_id" : "5e04f1dc67339a26d5f7258c",
-        	"unique_device" : "123"
-        }
-    3. Jika positif akan return =
-        {
-            "return" : true
-        }
-}
+#  4. Lanjut ke Signin, dengan POST Data di http://localhost:4000/signin, dgn param sbb =
+    {
+    	"email": "indrawanjonmuhamad@yahoo.com",
+        "password": "123akadsj23"
+    } ( 200 = { admins_id : "5dfd159ac46a7216f105c02f", result : true } ) -> admins_id harus disimpan untuk parameter POST nantinya
+
+#  5. Setelah Signin, lu bisa
+

@@ -10,9 +10,8 @@ const SentCode = new sent_code();
 const verify_code = require('./verifyCode');
 const VerifyCode = new verify_code();
 
-
 app.post('/request_code', async function (req, res) {
-    let email = req.body.email;
+    let email = req.body.email; 
     let status = false;
     let accParam = {email: email, status_verification: status};
     let process = await SentCode.processCodeSignUp(accParam);
@@ -20,12 +19,16 @@ app.post('/request_code', async function (req, res) {
 });
 
 app.post('/request_code/status', async function (req, res) {
+
     let email = req.body.email;
     let verifCode = req.body.verification_code;
     let accountParam = {email: email, verification_code: verifCode};
+    
     console.log(accountParam);
+    
     let process = await VerifyCode.processCode(accountParam);
     res.send({result: process})
+
 });
 
-module.exports = app;
+module.exports = app;   

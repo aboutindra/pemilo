@@ -34,10 +34,12 @@ app.post('/signup', async (req, res) => {
     status = await adm.funcSignUp(email, password, balance);
     console.log(status, " <- Statusnya");
     res.send({result: status});
+
 });
 
-app.get('/get_admin', async (req, res) => {
-    res.send({result: await adm.funcGetAll()});
+app.post('/get_admin', async (req, res) => {
+    let admins_id = req.body.admins_id;
+    res.send( await adm.funcGetAll(admins_id) );
 });
 
 //Event

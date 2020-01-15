@@ -3,8 +3,8 @@ const mdl = new Model("mongodb://127.0.0.1:27017/pemilo");
 
 class Admin {    
 
-    funcGetAll(){        
-        return mdl.pullAllAdmins();
+    funcGetAll(admins_id){        
+        return mdl.pullAllAdmins(admins_id);
     }
 
     funcLogin(accountParam) {
