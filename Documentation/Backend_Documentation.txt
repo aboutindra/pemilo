@@ -1,17 +1,17 @@
-############# Flow explanation in Signup & Signin #############
+################ Flow explanation in Signup & Signin ##################
 
-#  1. Di Frontend Signup, isi email dan Request POST ke http://localhost:6000/request_code, dgn param sbb =
+#  1. Di Frontend Signup, isi email dan Request Code Email di POST ke http://localhost:6000/request_code, dgn param sbb =
     {
         "email" : "indra@deepcode.me"
     } ( 200 = { result : true } )
 
-#  2. Setelah itu, lanjut verifikasi code nya di http://localhost:6000/request_code/status, dgn param sbb =
+#  2. Setelah itu, lanjut verifikasi POST code nya di http://localhost:6000/request_code/status, dgn param sbb =
     {
         "email" : "indra@deepcode.me",
         "verifCode" : "1920"
     } ( 200 = { result : true } ) -> status_verification di collection CodeEmail set True
 
-#  3. Jika di Frontend diraasa semuanya sudah True bisa lanjut Signup POST Data di http://localhost:4000/signin, dgn param sbb =
+#  3. Jika di Frontend diraasa semuanya sudah True bisa lanjut Signup POST Data di http://localhost:4000/signup, dgn param sbb =
     {
         "email" : "indra@deepcode.me",
         "password" : "indra123Q",
