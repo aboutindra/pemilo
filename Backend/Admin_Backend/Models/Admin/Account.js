@@ -1,15 +1,20 @@
 // Segala sesuatu yang berhubungan dengan akun
 // Contoh: *login,*signup,*changeProfile.
+const ObjectID = require('mongodb').ObjectID;
 
 class Account{
     
-    getDataAll(col) {
+    async getDataAll(adminsCol, admins_id) {
 
-        let dat;        
+        let statusGetDataAll;
 
-        dat = col.find().toArray();
-            
-        return dat;
+        let statusFindAdminsById = await adminsCol.find( { _id : ObjectID(admins_id) } ).toArray();
+
+        let statusExecuteFindAdminsById = ( statusFindAdminsById.length !== 0 ? true : false );
+
+        statusGetDataAll = { status : statusExecuteFindAdminsById, return : statusFindAdminsById };
+    
+        return statusGetDataAll;
 
     }
 
@@ -24,17 +29,22 @@ class Account{
 
         statusExecuteLogin = ((findAccount.length !== 0) ? true : false);
 
-        statusFinal = {request_id: findAccount[0]._id, result: statusExecuteLogin};
+        statusFinal = {admins_id: findAccount[0]._id, result: statusExecuteLogin};
 
         return statusFinal;
 
     }
 
     async executeSignUp(emailCodeCol, adminsCol, account) {
+
         let checkExecuteSignUp, checkEmailDuplicate;
+        
         console.log(account);
+        
         checkEmailDuplicate = await adminsCol.find({email: account.email}).toArray();
+        
         console.log(checkEmailDuplicate);
+        
         if (checkEmailDuplicate.length === 0) { // Jika tidak ditemukan maka bisa kita Insert data nya ke Collection
              await adminsCol.insertOne(account).then(function () {
                 checkExecuteSignUp = true;
@@ -42,6 +52,7 @@ class Account{
         } else {
             checkExecuteSignUp = false;
         }
+        
         return checkExecuteSignUp;
         /*let dat, dat2, sentToCodeEmailCol, unique_code;
         let status = false;

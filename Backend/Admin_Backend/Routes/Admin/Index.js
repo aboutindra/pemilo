@@ -28,16 +28,18 @@ app.post('/signup', async (req, res) => {
 
     let email = req.body.email;
     let password = req.body.password;
+    let school = req.body.school;
     let balance = 0;
 
-    let status = false;
-    status = await adm.funcSignUp(email, password, balance);
-    console.log(status, " <- Statusnya");
-    res.send({result: status});
+    let accParam = { email : email, password : password, school : school, balance : balance }
+
+    res.send( await adm.funcSignUp(accParam) );
+
 });
 
-app.get('/get_admin', async (req, res) => {
-    res.send({result: await adm.funcGetAll()});
+app.post('/get_admin', async (req, res) => {
+    let admins_id = req.body.admins_id;
+    res.send( await adm.funcGetAll(admins_id) );
 });
 
 //Event

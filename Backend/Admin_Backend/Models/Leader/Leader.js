@@ -37,7 +37,12 @@ class Leader {
     async pullLeader(leaderCol, idParam) {
         let findLeaderByEventId, statusPullLeader;
 
+        console.log(ObjectId(idParam.events_id));
+        
         findLeaderByEventId = await leaderCol.find({events_id: ObjectId(idParam.events_id)}).toArray();
+
+        console.log(findLeaderByEventId);
+
         if (findLeaderByEventId.length !== 0 ? statusPullLeader = findLeaderByEventId : statusPullLeader = findLeaderByEventId) ;
 
         return statusPullLeader;
