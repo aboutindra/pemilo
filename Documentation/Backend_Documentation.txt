@@ -1,4 +1,5 @@
-########## Flow explanation in backend 101 ##########
+############# Flow explanation in Signup & Signin #############
+
 #  1. Di Frontend Signup, isi email dan Request POST ke http://localhost:6000/request_code, dgn param sbb =
     {
         "email" : "indra@deepcode.me"
@@ -13,7 +14,8 @@
 #  3. Jika di Frontend diraasa semuanya sudah True bisa lanjut Signup POST Data di http://localhost:4000/signin, dgn param sbb =
     {
         "email" : "indra@deepcode.me",
-        "password" : "indra123Q"
+        "password" : "indra123Q",
+        "school" : "SMK Negeri 5 Kota Bekasi"
     } ( 200 = { result : true } ) -> Sudah terinsert di collection Admins
 
 #  4. Lanjut ke Signin, dengan POST Data di http://localhost:4000/signin, dgn param sbb =
@@ -22,5 +24,23 @@
         "password": "123akadsj23"
     } ( 200 = { admins_id : "5dfd159ac46a7216f105c02f", result : true } ) -> admins_id harus disimpan untuk parameter POST nantinya
 
-#  5. Setelah Signin, lu bisa
+#  5. Setelah Signin, lu bisa POST Profile Admin di http://localhost:4000/get_admin, dgn param sbb =
 
+    {
+        "admins_id" : "5dfd159ac46a7216f105c02f"
+    } ( 200 = {
+                  "status": true,
+                  "return": [
+                      {
+                          "_id": "5dfd159ac46a7216f105c02f",
+                          "email": "indrawanjonmuhamad@yahoo.com",
+                          "password": "123akadsj23",
+                          "school": "SMK Negeri 5 Kota Bekasi",
+                          "balance" : 0
+                          "statusAccount": true
+                      }
+                  ]
+              }
+      )
+
+########################################################################################

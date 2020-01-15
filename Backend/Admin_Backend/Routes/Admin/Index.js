@@ -28,12 +28,12 @@ app.post('/signup', async (req, res) => {
 
     let email = req.body.email;
     let password = req.body.password;
+    let school = req.body.school;
     let balance = 0;
 
-    let status = false;
-    status = await adm.funcSignUp(email, password, balance);
-    console.log(status, " <- Statusnya");
-    res.send({result: status});
+    let accParam = { email : email, password : password, school : school, balance : balance }
+
+    res.send( await adm.funcSignUp(accParam) );
 
 });
 
