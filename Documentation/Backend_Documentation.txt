@@ -1,4 +1,4 @@
-############# Flow explanation in Signup & Signin #############
+################ Flow explanation in Signup & Signin ##################
 
 #  1. Di Frontend Signup, isi email dan Request Code Email di POST ke http://localhost:6000/request_code, dgn param sbb =
     {
