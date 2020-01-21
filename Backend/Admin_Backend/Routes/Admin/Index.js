@@ -113,7 +113,7 @@ app.post('/select_leader', async (req, res) => {
 });
 
 /*
-router.post("/admin_add_event", function (req,res,next) {
+    router.post("/admin_add_event", function (req,res,next) {
     var encryptedReq = req.body.req;
     async function compareHashReq(encryptedReq) {
         encrypt.compare(plainText,encryptedReq, function (err,result) {

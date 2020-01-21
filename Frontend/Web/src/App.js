@@ -2,6 +2,7 @@ import React from 'react';
 
 import './Resource/App.css';
 import './Resource/Responsive.css';
+import ReactMidtrans from 'react-midtrans';
 
 import Root from './Root';
 

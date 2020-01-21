@@ -8,6 +8,7 @@
     "start": "node Index"
   },
   "dependencies": {
+    "async": "^3.1.0",
     "axios": "^0.19.0",
     "bcrypt": "^3.0.7",
     "body-parser": "^1.19.0",
