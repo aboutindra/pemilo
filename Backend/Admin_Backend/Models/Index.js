@@ -36,7 +36,6 @@ class MongoDB{
         });
     }
 
-
     //Admin.js
 
     pullAllAdmins(admins_id) {
