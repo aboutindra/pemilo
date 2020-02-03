@@ -14,6 +14,7 @@ class SentCode {
         console.log(checkDuplicateEmail, code);
         
         if (checkDuplicateEmail.length === 0) {
+
             let accParam = {
                 email: param.email,
                 verification_code: code,
