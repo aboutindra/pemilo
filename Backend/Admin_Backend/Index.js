@@ -18,7 +18,7 @@ app.use('/', Admin);
 app.listen(4000, async (err)=>{
     
     if(err){console.log("Error")}
-    else{console.log("Server http://localhost:4000/ [status:running]");}
+    else{console.log("Server http://localhost:4000/ [Admin:running]");}
     await mongo.createCollectionRequire();
     await mongo.checkConnection();    
 

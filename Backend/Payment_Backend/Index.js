@@ -15,10 +15,10 @@ app.use(cors());
 
 app.use('/', Router);
 
-app.listen(3030, async (err)=>{
+app.listen(4003, async (err)=>{
     
     if(err){console.log("Error")}
-    else{console.log("Payment Service running at http://localhost:3030/ [status:running]");}
+    else{console.log("Server http://localhost:4003/ [Payment:running]");}
     await mongo.createCollectionRequire();
     await mongo.checkConnection();    
 

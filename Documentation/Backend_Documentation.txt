@@ -1,3 +1,14 @@
+##################### PORT Address ####################################
+
+* Admin_Backend ( http://localhost:4000/ )
+* Client_Backend ( http://localhost:4001/ )
+* Email_Backend ( http://localhost:4002/ )
+* Payment_Backend ( http://localhost:4003/ )
+* Encrypt_Backend ( http://localhost:4004/ )
+
+#######################################################################
+
+
 ################ Flow explanation in Signup & Signin ##################
 
 #  1. Di Frontend Signup, isi email dan Request Code Email di POST ke http://localhost:6000/request_code, dgn param sbb =
