@@ -6,22 +6,22 @@ const bp = require("body-parser");
 const Client = require('./Client');
 const client = new Client();
 
+const encrypt = require('./../../Controllers/Encryption/hash/Encrypt');
+const Encrypt = new encrypt();
+
+const decrypt = require('./../../Controllers/Encryption/hash/Decrypt');
+const Decrypt = new decrypt();
+
+const auth = require('./../../Controllers/Encryption/lib/Auth');
+const Auth = new auth();
+
 app.use(bp.json());
 
-app.post("/check_code", async (req,res) => {
+app.post('/select_leader', async (req, res, next) => {
 
-    let code = req.body.code;
-    let sta = false;
-    sta = await client.funcCheckCode(code);
-    res.send({result: sta});
+   await Auth.verifToken(req, res, next);
 
-});
-
-app.get('/all', async (req,res)=>{
-    res.send({result: await client.funcGetAll()});
-});
-
-app.post('/select_leader', async (req, res) => {
+}, async (req, res) => {
 
     let code = req.body.code;
     let select_leader = req.body.select_leader;
@@ -32,7 +32,7 @@ app.post('/select_leader', async (req, res) => {
         event_id: event_id
     });
     let status = await client.funcSelectLeader(code, select_leader, event_id);
-    res.send({status: true, result: status});
-
+    res.send( { result : Encrypt.chashO( {status: true, result: status} ) } );
 });
+
 module.exports = app;
