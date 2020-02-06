@@ -13,7 +13,7 @@ class Admin {
     }
 
     funcSignUp(accParam) {
-        console.log(accParam.email, " | ", accParam.password, " | ", accParam.school, " | ", accParam.balance);
+        console.log(accParam.email, " | ", accParam.password, " | ", accParam.organization);
         return mdl.signUpAdmins(accParam);
     }
 

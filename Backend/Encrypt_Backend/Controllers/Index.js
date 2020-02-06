@@ -7,7 +7,7 @@ const Encrypt = new enc();
 class ControllerIndex {
 
     checkRequest( req_id ){
-        Decrypt
+        Decrypt.decReq( req_id );
     }
 
 }

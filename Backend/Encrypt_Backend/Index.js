@@ -15,12 +15,12 @@ app.use(bp.json());
 app.use("/", route);
 
 app.listen(4004, async (err) => {
-    if(err) { console.log("Encrypt failed to running, error : ", err) }
+    if(err) { console.log("lib failed to running, error : ", err) }
 
     app.post("*", (req,res) => { res.send({ status : "OK" }) });
     app.delete("*", (req,res) => { res.send({ status : "OK" }) });
     app.get("*", (req,res) => { res.send({ status : "OK" }) });
     app.put("*", (req,res) => { res.send({ status : "OK" }) });
 
-    console.log("Server http://localhost:4004/ [Encrypt:running]");
+    console.log("Server http://localhost:4004/ [lib:running]");
 });
