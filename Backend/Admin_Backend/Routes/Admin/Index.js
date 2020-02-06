@@ -156,6 +156,8 @@ app.post('/select_leader', async (req, res, next) => {
 
 });
 
+app.post('/gt', Auth.createToken);
+
 /*
     router.post("/admin_add_event", function (req,res,next) {
     var encryptedReq = req.body.req;

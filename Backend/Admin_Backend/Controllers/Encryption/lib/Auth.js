@@ -8,7 +8,6 @@ class Auth{
 
         const tkn = await jwt.sign({scrt:process.env.RANDOM}, process.env.T,{ expiresIn:60});
         res.cookie('k',{token:tkn, type:'bearer'});
-        res.send({result:{token:tkn, tipe:"Bearer"}});
 
     }
 
