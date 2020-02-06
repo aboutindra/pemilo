@@ -33,7 +33,7 @@ app.post("/signin", async (req, res, next) => {
     let password = req.body.password;
     let accountParam = {email: email, password: password};
 
-    res.send(await adm.funcLogin(accountParam));
+    res.send( { result : Encrypt.chashO(await adm.funcLogin(accountParam)) } );
 
 });
 
@@ -49,7 +49,7 @@ app.post('/signup', async (req, res, next) => {
 
     let accParam = { email : email, password : password, organization : organization };
 
-    res.send( await adm.funcSignUp(accParam) );
+    res.send( { result : Encrypt.chashO( { result : await adm.funcSignUp(accParam) } ) } );
 
 });
 
@@ -60,7 +60,7 @@ app.post('/get_admin', async (req, res, next) => {
 }, async ( req, res ) => {
 
     let admins_id = req.body.admins_id;
-    res.send( await adm.funcGetAll(admins_id) );
+    res.send( { result : Encrypt.chashO( await adm.funcGetAll(admins_id) ) } );
 
 });
 
@@ -92,7 +92,7 @@ app.post('/add_event', async (req, res, next) => {
         event_end: eventEnd
     };
 
-    res.send({result: await event.funcAddEvent(eventParam)});
+    res.send({result: Encrypt.chashO( await event.funcAddEvent(eventParam) )});
 
 });
 
@@ -101,8 +101,10 @@ app.post('/get_event_list', async (req, res, next) => {
     await Auth.verifToken( req, res, next );
 
 }, async (req, res) => {
+
     let admins_id = req.body.admins_id;
-    res.send(await event.funcGetEventList(admins_id))
+    res.send( { result : Encrypt.chashO( await event.funcGetEventList(admins_id) ) } )
+
 });
 
 //Leader.js
@@ -120,7 +122,7 @@ app.post('/add_leader', async (req, res, next) => {
 
     console.log(leaderParam);
 
-    res.send(await leader.funcAddLeader(leaderParam));
+    res.send( { result : Encrypt.chashO( await leader.funcAddLeader(leaderParam) ) } );
 });
 
 app.post('/get_leader', async (req, res, next) => {
@@ -134,7 +136,7 @@ app.post('/get_leader', async (req, res, next) => {
 
     let idParam = {events_id: events_id, admins_id: admins_id};
 
-    res.send(await leader.funcGetLeader(idParam));
+    res.send( { result : Encrypt.chashO( await leader.funcGetLeader(idParam) ) } );
 
 });
 
@@ -150,7 +152,7 @@ app.post('/select_leader', async (req, res, next) => {
 
     let selectParam = {leaders_id: leaders_id, events_id: events_id, unique_device: unique_device};
 
-    res.send({result: await leader.funcSelectLeader(selectParam)});
+    res.send({result: Encrypt.chash(await leader.funcSelectLeader(selectParam))});
 
 });
 
