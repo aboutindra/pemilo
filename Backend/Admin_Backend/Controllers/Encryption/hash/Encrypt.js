@@ -8,7 +8,7 @@ class Encrypt{
         this.iterations = 100;
     }
 
-    chashO(param){
+    async chashO(param){
         const salt  = cry.lib.WordArray.random(128/8);
         const key   = cry.PBKDF2(process.env.K, salt, {
             keySize: this.keySize/32,
@@ -24,7 +24,7 @@ class Encrypt{
         return res;
     }
 
-    chash(param){
+    async chash(param){
 
         const salt  = cry.lib.WordArray.random(128/8);
         const key   = cry.PBKDF2(process.env.K, salt, {
