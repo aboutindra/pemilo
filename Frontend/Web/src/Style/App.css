@@ -1,4 +1,13 @@
 
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: dimgray;
+}
+
 /* Style Index.jsx */
 
 .BodIndex{
@@ -56,7 +65,7 @@
     padding: 25px;
     padding-top: 0px;
 }
-.BodSignup .Box:hover{
+.BodSignup .Box{
     box-shadow: 5px 10px 15px 10px rgba(0, 0, 0, 0.06);
 }
 .BodSignup .Box .Txt-title{
@@ -179,14 +188,13 @@
     width: 300px;
     min-height: 300px;
     height: auto;
+
+    padding: 0px 10px;
 }
 .FrameLog .BodLog .Box{
     width: 100%;
 
     border-radius: 5px;
-}
-.FrameLog .BodLog .Box:hover{
-    box-shadow: 5px 10px 15px 10px rgba(0, 0, 0, 0.06);
 }
 .FrameLog .BodLog .Box .Group{
     padding: 25px;
@@ -215,7 +223,7 @@
     font-size: 0.85em; 
 }
 .FrameLog .BodLog .Box .Group .Row2 .input{
-    padding: 10px;
+    padding: 15px;
     padding-right: 0px;
 
     width: 95%;
@@ -295,3 +303,108 @@
 .BodScanner .container .box .group .row1 .scan{
     width: 100%;
 }
+
+/* Style untuk LayoutDashboard */
+
+.LayDash .Navtop header{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 5px 35px;
+  box-shadow: 5px 1px 5px 2px rgba(0, 0, 0, 0.075);
+}
+
+.LayDash .Navtop header .logo{
+  cursor: pointer;  
+  margin-right: auto;
+}
+
+.LayDash .Navtop header .nav__links{
+  list-style: none;
+}
+
+.LayDash .Navtop header .nav__links li, .LayDash .Navtop header .nav__links li a{
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  color: dimgray;
+  text-decoration: none;
+}
+
+.LayDash .Navtop header .nav__links li{
+  display: inline-block;
+  padding: 0px 20px;
+  outline: none;
+}
+
+.LayDash .Navtop header .nav__links li a:hover{
+  color: #0088a9;
+}
+
+.LayDash .Navtop header .btn{
+  padding-left: 20px;  
+}
+
+.LayDash .Navtop header .btn a button{
+  padding: 12px 15px;
+  border: none;  
+  background-color: #0087a9ad;
+  border-radius: 4px;  
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+}
+
+.LayDash .Navtop header .btn a button:hover{
+  background-color: #0087a983;
+}
+
+.LayDash .BodAdmin .Left{
+  position: fixed;
+  width: 5%;
+  float: left;
+  background-color: #5f636817;
+  height: 100vh;   
+}
+
+.LayDash .BodAdmin .Left .Navleft{
+  padding-top: 10px;
+}
+
+.LayDash .BodAdmin .Left .Navleft li{
+  padding: 10px 0px;
+}
+
+.LayDash .BodAdmin .Left .Navleft li a .out{
+  color: rgb(224, 106, 106);
+}
+
+.LayDash .BodAdmin .Left .Navleft li a{
+  
+  display: inline-block;
+  width: 100%;        
+  font-size: 25px;
+  padding: 0px 15px;
+  padding-top: 5px;
+  
+}
+
+.LayDash .BodAdmin .Left .Navleft li a:hover{
+  background-color: white;   
+}
+
+.LayDash .BodAdmin .Left .Navleft li a i{
+  font-size: 1.2em;
+}
+
+.LayDash .BodAdmin .Right{
+  width: 95%;
+  float: left;
+  padding-left: 5%;
+}
+
+.LayDash .BodAdmin .Right .container{
+  padding: 25px;
+}
+
+

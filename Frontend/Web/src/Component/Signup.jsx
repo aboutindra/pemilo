@@ -2,7 +2,7 @@ import React,{useState, useContext} from 'react';
 
 import { Link } from 'react-router-dom';
 
-import { CntxtStaModal1 } from '../../Global/Store';
+import { CntxtStaModal1 } from '../Global/Store';
 
 export default function Signup(){
     
@@ -45,7 +45,7 @@ export default function Signup(){
                             Sign up for Pemilo.id
                         </button>   
                         <span>
-                            Already have an account? <Link to="/login">Sign in</Link>
+                            Already have an account? <Link to="/l">Sign in</Link>
                         </span>
                     </div>
                     
