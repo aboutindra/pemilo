@@ -18,7 +18,11 @@ app.use('/', Admin);
 app.listen(4000, async (err)=>{
     
     if(err){console.log("Error")}
-    else{console.log("Server http://localhost:4000/ [status:running]");}
+    else{console.log("Server http://localhost:4000/ [Admin:running]");}
+    app.post("*", (req,res) => { res.send({ status : "OK" }) });
+    app.delete("*", (req,res) => { res.send({ status : "OK" }) });
+    app.get("*", (req,res) => { res.send({ status : "OK" }) });
+    app.put("*", (req,res) => { res.send({ status : "OK" }) });
     await mongo.createCollectionRequire();
     await mongo.checkConnection();    
 
