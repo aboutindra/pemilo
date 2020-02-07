@@ -1,4 +1,5 @@
 
+
 li{
   list-style: none;
 }
@@ -353,6 +354,7 @@ a{
   font-weight: 700;
   color: white;
   cursor: pointer;
+  font-size: 15px;
 }
 
 .LayDash .Navtop header .btn a button:hover{
@@ -361,7 +363,7 @@ a{
 
 .LayDash .BodAdmin .Left{
   position: fixed;
-  width: 5%;
+  min-width: 5%;
   float: left;
   background-color: #5f636817;
   height: 100vh;   
@@ -382,7 +384,7 @@ a{
 .LayDash .BodAdmin .Left .Navleft li a{
   
   display: inline-block;
-  width: 100%;        
+  width: 55%;        
   font-size: 25px;
   padding: 0px 15px;
   padding-top: 5px;
@@ -403,8 +405,36 @@ a{
   padding-left: 5%;
 }
 
-.LayDash .BodAdmin .Right .container{
+.LayDash .BodAdmin .Right .container{  
   padding: 25px;
 }
 
+.LayDash .Navbot{
+  background-color: #5f636817;
+  overflow: hidden;
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  width: 100%;
+}
 
+.LayDash .Navbot .container{
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.LayDash .Navbot .container .col{
+  float: left;
+  width: 20%;
+  text-align: center;
+}
+
+.LayDash .Navbot .container .col i{
+  float: none;
+  display: block;  
+  padding: 15px;
+  padding-right: 20px;
+  padding-left: 0px; 
+  font-size: 20px;
+  cursor: pointer;
+}

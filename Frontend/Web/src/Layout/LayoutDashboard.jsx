@@ -16,11 +16,11 @@ export default function(){
             <ul className="nav__links">
               <li><a href="#">Service</a></li>
               <li><a href="#">About</a></li>
-              <li><a href="#">Project</a></li>              
+              <li><a href="#">Contact</a></li>              
             </ul>
           </nav>
           <div className="btn">
-            <a href="#" className="cta"><button>Profile</button></a>
+            <a href="#" className="cta"><button>Log Out</button></a>
           </div>
         </header>
       </div>
@@ -44,7 +44,23 @@ export default function(){
 
 
       <div className="Navbot">
-
+        <div className="container">
+          <div className="col">
+            <i className="material-icons">account_circle</i>
+          </div>
+          <div className="col">
+            <i className="material-icons">event</i>
+          </div>
+          <div className="col">
+            <i className="material-icons">settings_applications</i>
+          </div>
+          <div className="col">
+            <i className="material-icons">history</i>
+          </div>
+          <div className="col sta-log">
+            <i className="material-icons">logout</i>
+          </div>
+        </div>
       </div>
 
     </div>
