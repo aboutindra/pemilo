@@ -1,10 +1,9 @@
 import React from 'react';
 
-import './Resource/App.css';
-import './Resource/Responsive.css';
-import ReactMidtrans from 'react-midtrans';
+import './Style/App.css';
+import './Style/Responsive.css';
 
-import Root from './Root';
+import Root from './Router/Root';
 
 
 function App() {

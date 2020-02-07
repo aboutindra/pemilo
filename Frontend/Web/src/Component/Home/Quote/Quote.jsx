@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Quote({Title, Desc}){    
+export default function Quote({Title, Desc}){
     return(
         <div className="BodQuote">
             <div className="Txt-title">
@@ -8,7 +8,7 @@ export default function Quote({Title, Desc}){
             </div>
             <div className="Txt-desc">
                 <span>{Desc}</span>
-            </div>            
+            </div>
         </div>
-    );
+    )
 }
