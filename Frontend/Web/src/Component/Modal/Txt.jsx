@@ -15,7 +15,7 @@ export default function Txt({config}){
     return(
         <div className="BackModal">                        
             <span className="ClosedBtn" onClick={()=>{SetStaModal(false)}}>
-                <i className="fa fa-close"></i>
+            <i className="material-icons">close</i>
             </span> 
             <div className="ModalTxt">                
                 <div className="Box">

@@ -15,10 +15,10 @@ app.use(cors());
 
 app.use('/', User);
 
-app.listen(5000, async (err) => {
+app.listen(4001, async (err) => {
     
     if(err){console.log("Error")} else {
-        console.log("Server http://localhost:5000/ [status:running]");
+        console.log("Server http://localhost:4001/ [Client:running]");
     }
     await mongo.createCollectionRequire();
     await mongo.checkConnection();

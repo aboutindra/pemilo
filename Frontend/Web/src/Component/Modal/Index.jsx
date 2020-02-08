@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../../Resource/Modal.css';
+import '../../Style/Modal.css';
 
 import Txt from './Txt';
 

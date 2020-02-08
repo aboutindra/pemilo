@@ -36,11 +36,10 @@ class MongoDB{
         });
     }
 
-
     //Admin.js
 
-    pullAllAdmins() {
-        return acc_admin.getDataAll(this.adm);
+    pullAllAdmins(admins_id) {
+        return acc_admin.getDataAll(this.adm, admins_id);
     }
 
     checkForLogin(accountParam) {
