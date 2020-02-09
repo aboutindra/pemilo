@@ -14,6 +14,7 @@ export default function(){
           <img src={require('../Resource/img/logo.webp')} className="logo" alt="logo"/>          
           <nav>
             <ul className="nav__links">
+              <li></li>
               <li><a href="#">Service</a></li>
               <li><a href="#">About</a></li>
               <li><a href="#">Contact</a></li>              

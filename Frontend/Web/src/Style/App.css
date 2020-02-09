@@ -312,7 +312,7 @@ a{
   justify-content: flex-end;
   align-items: center;
   padding: 5px 35px;
-  box-shadow: 5px 1px 5px 2px rgba(0, 0, 0, 0.075);
+  box-shadow: 1px 5px 5px 0px rgba(0, 0, 0, 0.075);
 }
 
 .LayDash .Navtop header .logo{
@@ -401,12 +401,12 @@ a{
 
 .LayDash .BodAdmin .Right{
   width: 95%;
-  float: left;
+  float: left;  
   padding-left: 5%;
 }
 
 .LayDash .BodAdmin .Right .container{  
-  padding: 25px;
+  padding: 25px;  
 }
 
 .LayDash .Navbot{
@@ -426,15 +426,14 @@ a{
 .LayDash .Navbot .container .col{
   float: left;
   width: 20%;
-  text-align: center;
+  text-align: center;  
 }
 
-.LayDash .Navbot .container .col i{
+.LayDash .Navbot .container .col i{  
   float: none;
-  display: block;  
-  padding: 15px;
-  padding-right: 20px;
-  padding-left: 0px; 
-  font-size: 20px;
+  color: dimgray;
+  display: inline-block;      
+  padding: 15px 10px;
+  font-size: 25px;
   cursor: pointer;
 }
