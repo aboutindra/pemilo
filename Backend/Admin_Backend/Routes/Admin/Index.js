@@ -23,11 +23,11 @@ const Decrypt = new decrypt();
 
 app.use(bp.json());
 
-app.post("/signin", async (req, res, next) => {
+app.post("/signin",
 
-    await Auth.verifToken( req, res, next );
+    Auth.verifToken
 
-}, async ( req, res ) => {
+, async ( req, res ) => {
 
     let email = req.body.email;
     let password = req.body.password;
@@ -37,27 +37,22 @@ app.post("/signin", async (req, res, next) => {
 
 });
 
-app.post('/signup', async (req, res, next) => {
+app.post('/signup', Auth.verifToken, async (req, res)=>{
 
-    await Auth.verifToken( req, res, next );
-
-}, async ( req, res ) => {
-
+    console.log( req.body );
     let email = req.body.email;
     let password = req.body.password;
     let organization = req.body.organization;
-
     let accParam = { email : email, password : password, organization : organization };
-
     res.send( { result : Encrypt.chashO( { result : await adm.funcSignUp(accParam) } ) } );
 
 });
 
-app.post('/get_admin', async (req, res, next) => {
+app.post('/get_admin',
 
-    await Auth.verifToken( req, res, next );
+ Auth.verifToken
 
-}, async ( req, res ) => {
+, async ( req, res ) => {
 
     let admins_id = req.body.admins_id;
     res.send( { result : Encrypt.chashO( await adm.funcGetAll(admins_id) ) } );
@@ -66,11 +61,11 @@ app.post('/get_admin', async (req, res, next) => {
 
 //Event
 
-app.post('/add_event', async (req, res, next) => {
+app.post('/add_event',
 
-    await Auth.verifToken( req, res, next );
+    Auth.verifToken
 
-}, async ( req, res ) => {
+, async ( req, res ) => {
 
     let adminsID = req.body.admins_id;
     let eventTitle = req.body.event_title;
@@ -96,11 +91,11 @@ app.post('/add_event', async (req, res, next) => {
 
 });
 
-app.post('/get_event_list', async (req, res, next) => {
+app.post('/get_event_list',
 
-    await Auth.verifToken( req, res, next );
+    Auth.verifToken
 
-}, async (req, res) => {
+, async (req, res) => {
 
     let admins_id = req.body.admins_id;
     res.send( { result : Encrypt.chashO( await event.funcGetEventList(admins_id) ) } )
@@ -109,11 +104,11 @@ app.post('/get_event_list', async (req, res, next) => {
 
 //Leader.js
 
-app.post('/add_leader', async (req, res, next) => {
+app.post('/add_leader',
 
-    await Auth.verifToken( req, res, next );
+    Auth.verifToken
 
-}, async (req, res) => {
+, async (req, res) => {
     let admins_id = req.body.admins_id;
     let events_id = req.body.events_id;
     let candidate = req.body.candidate;
@@ -125,11 +120,11 @@ app.post('/add_leader', async (req, res, next) => {
     res.send( { result : Encrypt.chashO( await leader.funcAddLeader(leaderParam) ) } );
 });
 
-app.post('/get_leader', async (req, res, next) => {
+app.post('/get_leader',
 
-    await Auth.verifToken( req, res, next );
+    Auth.verifToken
 
-}, async (req, res) => {
+, async (req, res) => {
 
     let events_id = req.body.events_id;
     let admins_id = req.body.admins_id;
@@ -140,11 +135,11 @@ app.post('/get_leader', async (req, res, next) => {
 
 });
 
-app.post('/select_leader', async (req, res, next) => {
+app.post('/select_leader',
 
-    await Auth.verifToken( req, res, next );
+  Auth.verifToken
 
-}, async (req, res) => {
+, async (req, res) => {
 
     let leaders_id = req.body.leaders_id;
     let events_id = req.body.events_id;

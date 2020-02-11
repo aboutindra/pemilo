@@ -17,11 +17,11 @@ const Auth = new auth();
 
 app.use(bp.json());
 
-app.post('/select_leader', async (req, res, next) => {
+app.post('/select_leader',
 
-   await Auth.verifToken(req, res, next);
+   Auth.verifToken
 
-}, async (req, res) => {
+, async (req, res) => {
 
     let code = req.body.code;
     let select_leader = req.body.select_leader;
@@ -33,6 +33,7 @@ app.post('/select_leader', async (req, res, next) => {
     });
     let status = await client.funcSelectLeader(code, select_leader, event_id);
     res.send( { result : Encrypt.chashO( {status: true, result: status} ) } );
+
 });
 
 module.exports = app;
