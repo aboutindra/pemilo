@@ -3,7 +3,6 @@ const bp = require('body-parser');
 const cors = require('cors');
 const app = express.Router();
 
-
 const sent_code = require('./sent_code');
 const SentCode = new sent_code();
 

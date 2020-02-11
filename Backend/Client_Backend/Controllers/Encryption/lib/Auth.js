@@ -5,6 +5,7 @@ require('dotenv').config();
 class Auth{
 
     async verifToken(req, res, next){
+
         try {
             const tkn = req.headers["authorization"];
             if(tkn){
@@ -20,6 +21,7 @@ class Auth{
         } catch (err) {
             res.send({result:"Authorization"});
         }
+
     }
 }
 
