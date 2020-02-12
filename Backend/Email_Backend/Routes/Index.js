@@ -18,11 +18,11 @@ const Encrypt = new encrypt();
 const decrypt = require('./../Controllers/Encryption/hash/Decrypt');
 const Decrypt = new decrypt();
 
-app.post('/request_code', async (req, res, next) => {
+app.post('/request_code',
 
-    await Auth.verifToken(req, res, next);
+    Auth.verifToken
 
-}, async (req, res) => {
+, async (req, res) => {
 
     let email = req.body.email;
     let status = false;
@@ -32,11 +32,11 @@ app.post('/request_code', async (req, res, next) => {
 
 });
 
-app.post('/request_code/status', async (req, res, next) => {
+app.post('/request_code/status',
 
-    await Auth.verifToken(req, res, next);
+   Auth.verifToken
 
-}, async (req, res) => {
+, async (req, res) => {
 
     let email = req.body.email;
     let verifCode = req.body.verification_code;

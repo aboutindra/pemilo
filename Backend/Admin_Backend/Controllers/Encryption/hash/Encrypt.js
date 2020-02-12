@@ -8,7 +8,7 @@ class Encrypt{
         this.iterations = 100;
     }
 
-    async chashO(param){
+    chashO(param){
         const salt  = cry.lib.WordArray.random(128/8);
         const key   = cry.PBKDF2(process.env.K, salt, {
             keySize: this.keySize/32,
@@ -20,11 +20,11 @@ class Encrypt{
             padding: cry.pad.Pkcs7,
             mode:cry.mode.CBC
         });
-        const res   = salt.toString() + iv.toString() + hsl.toString();
-        return res;
+        console.log(salt.toString());
+        return salt.toString() + iv.toString() + hsl.toString();
     }
 
-    async chash(param){
+    chash(param){
 
         const salt  = cry.lib.WordArray.random(128/8);
         const key   = cry.PBKDF2(process.env.K, salt, {
